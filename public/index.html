@@ -1,0 +1,152 @@
+ <!DOCTYPE HTML>
+<html data-bs-theme="dark">
+
+<head>
+	<title>HH</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
+	<link rel="stylesheet" href="assets/css/homepage.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+	<!-- Basic Meta -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Author -->
+	<meta name="author" content="Mischa vd Goes">
+
+	<!-- Description -->
+	<meta name="description" content="">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Haarlem Horloges">
+	<meta property="og:description" content="Discover a curated selection of entry-level mechanical watches from top brands, thoughtfully selected by Haarlem Horloges.">
+	<meta property="og:image" content="assets/images/haarlem_horloges_thumbnail.jpg">
+	<meta property="og:url" content="https://www.haarlemhorloges.com">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Haarlem Horloges">
+	<meta name="twitter:description" content="Browse the finest entry-level mechanical watches and start your watch collection today with Haarlem Horloges.">
+	<meta name="twitter:image" content="assets/images/haarlem_horloges_thumbnail.jpg">
+
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/haarlem_horloges_favicon.png">
+	
+	<!--<script src="assets/components/modal_component.js"></script>-->
+	
+</head>
+<body>
+    <!-- gradient background -->
+	<div class="overlay"></div>
+	<!-- Navbar -->
+    <div id="navbar-container"></div>
+	
+	<div class="content">
+
+	
+
+    <!-- Content -->
+    <div class="container mt-5 my-5 ">
+        <h1 class="text-center">Hello!<br>I’m Mischa, a UX designer specialising in web applications for business</h1>
+        <p class="text-center text-muted mt-3">I specialize in creating solutions that bridge business goals with user needs. </p>
+    </div>
+
+	<!-- Jumbatron -->
+	<div class="container col-xxl-8">
+				
+		<div class="container my-4">
+			<div class="text-end mb-2">
+				<button id="toggle-view-btn" class="btn btn-light btn-sm border-0">
+					<i class="fas fa-toggle-on"></i> <!-- Use "fa-toggle-off" for the other state -->
+				</button>
+			</div>
+			
+			
+			<table id="watches-table" class="table table-striped table-bordered table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Category</th>
+						<th>Price</th>
+						<th>Image</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Data will be populated here -->
+				</tbody>
+			</table>
+
+			<div id="cards-view" class="row d-none">
+				<!-- Cards will be dynamically populated here -->
+			</div>
+
+			<!-- Logos -->
+			<div class="container my-5">
+				<div class="text-center">
+					<p class="label label-outline mb-2 d-inline-block">Brands</p>
+				</div>
+				<h2 class="text-light pb-2 text-center">Featured brands</h2>
+				<div class="row justify-content-center text-center">
+					<div class="col-6 col-md-3 d-flex justify-content-center">
+						<img src="assets/images/client logos/timex-logo-png-transparent 1.png" alt="Watch Image" class="img-fluid">
+					</div>
+					<div class="col-6 col-md-3 d-flex justify-content-center">
+						<img src="assets/images/client logos/timex-logo-png-transparent 2.png" alt="Watch Image" class="img-fluid">
+					</div>
+					<div class="col-6 col-md-3 d-flex justify-content-center">
+						<img src="assets/images/client logos/timex-logo-png-transparent 3.png" alt="Watch Image" class="img-fluid">
+					</div>
+					<div class="col-6 col-md-3 d-flex justify-content-center">
+						<img src="assets/images/client logos/timex-logo-png-transparent 4.png" alt="Watch Image" class="img-fluid">
+			</div>
+
+
+			<!--<div class="text-center"> 
+				<a class="btn btn-primary btn-lg" role="button" href="watches.html">View all watches</a>
+			</div>-->
+
+			<!-- Services -->
+			<!-- <div id="services-container"></div> NOT RELEVANT FOR HH -->
+		
+			<!-- Testimonials -->
+			<div id="testimonials-container"></div>
+			
+		</div>
+	</div>
+	<!-- Side Panel Structure -->
+	<div id="side-panel-container"></div>
+	<div id="footer-container"></div>
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Include Bootstrap JS for the modal functionality -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<!--code to set things up-->
+	<script src="js/main.js"></script>
+	<script src="js/viewManager.js"></script> <!--displays watches on homepage-->
+	<script src="js/togglebutton.js"></script> <!--for toggling between data views-->
+	<script src="js/sidepanel_handling.js"></script>
+	
+	<!--set up snippets>-->
+	<script src="assets/components/navbar.js"></script>
+	<script src="assets/components/services-cards.js"></script>
+	<script src="assets/components/testimonials.js"></script>
+	<script src="assets/components/footer.js"></script>
+	<script src="assets/components/sidepanel.js"></script>
+
+</body>

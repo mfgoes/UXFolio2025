@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+.bg-brand {
+  background-color: #5856D6;
+}
+
+.dark-section {
+  background-color: #131417;
+}
+
+.btn-primary {
+  background-color: #5856D6;
+  border-color: #5856D6;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #4c4ac3;
+}
+
+.border-16 {
+  border-radius: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+h3 {
+  line-height: 110%;
+  font-size: 24px;
+}
+
+@media (max-width: 492px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+body, p, table, th {
+  font-family: "Archivo", sans-serif;
+}
+
+.thead-dark {
+  background-color: #212F3C;
+  color: #EBEDEF;
+}
+
+h1 {
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  font-weight: 300;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container, #footer-container {
+  flex: 1;
+}
+
+footer {
+  background-color: #131417;
+  font-family: "Manrope", sans-serif;
+  color: #DADADA;
+}
+footer h5 {
+  font-weight: 600;
+  font-size: 1em;
+  color: white;
+}
+footer p, footer a {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #DADADA;
+  line-height: 2.3em;
+  transition: 0.3s;
+}
+footer p:hover, footer a:hover {
+  color: white;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+footer p {
+  line-height: 1.2em;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.navbar-container {
+  z-index: 10; /* Ensures the content stays above the overlay */
+}
+
+.nav-item {
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
+}
+
+.navbar-dark {
+  background-color: #131417;
+}
+
+.navbar-brand {
+  font-size: 1em;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-family: "Manrope", sans-serif;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#watches-table img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+}

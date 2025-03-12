@@ -1,0 +1,179 @@
+// Variables
+$border-radius-large: 16px;
+$underline-width: 3px;
+$gray-10: #F3F3EF;
+$border-color: #2e2e2e;
+$background-dark: #0f0f11;
+$background-dark-hover: #141416;
+$text-muted: #868686;
+
+// Shared styles
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin card-styles {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: $background-dark;
+    border: 1px solid $border-color;
+    @include border-radius($border-radius-large);
+}
+
+@mixin flex-container($direction, $align: center, $justify: space-between) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// Label styles
+.label-outline {
+    border: 1px solid $border-color;
+    @include border-radius($border-radius-large);
+    padding: 4px 10px;
+    color: $text-muted;
+}
+
+
+//Toggle UI
+#toggle-view-btn {
+    color: #adadad;
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    transition: color 0.2s ease-in-out;
+}
+
+#toggle-view-btn:hover {
+    color: $gray-10;
+}
+
+
+// Cards
+#cards-view {
+    .card {
+        @include card-styles;
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                padding-top: 75%; // 4:3 aspect ratio
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                @include border-radius($border-radius-large $border-radius-large 0 0);
+            }
+        }
+
+        .card-body {
+            @include flex-container(row);
+            gap: 10px; // Optional spacing between elements
+
+            h1, h2, h4, h5 {
+                color: white;
+            }
+
+            p {
+                color: $gray-10;
+            }
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                .card-arrow {
+                    background-color: $gray-10;
+                    margin-right: 0;
+                    transition: 0.3s;
+                }
+
+                .card-arrow svg {
+                    transform: translateX(0px);
+                    fill: #1A1B1F;
+                }
+            }
+        }
+
+        .card-arrow {
+            display: inline-block;
+            background-color: rgba(233, 233, 233, 0.18); // More readable
+            margin-top: 10px;
+            padding: 10px;
+            @include border-radius(10px);
+            transition: 0.3s;
+
+            svg {
+                fill: #fff;
+                transition: transform 0.5s ease;
+            }
+        }
+
+        &:hover {
+            background-color: $background-dark-hover; 
+            transition: 0.3s;
+        }
+    }
+}
+
+
+// Testimonials
+.testimonials {
+    @include card-styles;
+    @include flex-container(column, left, space-between);
+    height: 100%; // Uniform height for all cards
+    padding: 24px;
+    margin-bottom: 12px;
+    transition: 0.2s;
+    .subtitle {
+        color: red;
+    }
+
+    img {
+        width: 60px;
+        @include border-radius(40px);
+        margin-right: 14px;
+    }
+
+    .testimonials-body {
+
+        h1, h2, h4, h5 {
+            color: white;
+            font-weight: 500;
+        }
+    }
+
+    .card-text {
+        margin-top: auto;
+        flex-grow: 1;
+    }
+
+    &:hover {
+        background-color: $background-dark-hover; 
+        transition: 0.3s;
+    }
+}
+
+
+.card-text {
+    margin-top: auto; // Pushes the text to the bottom if space allows
+    flex-grow: 1; // Ensures the text takes up remaining space evenly
+}
+
+.text-gray-10 {
+    color: #CFCFCF;
+}

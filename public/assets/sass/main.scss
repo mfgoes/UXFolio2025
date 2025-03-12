@@ -1,0 +1,174 @@
+// Import the Staatliches font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+// Define border radius variables
+$border-radius-large: 16px;
+$underline-width: 3px;
+$brand-color: #5856D6;
+$brand-black: #131417;
+$gray-20: #666666;
+$gray-40: #424242;
+$text-muted: #DADADA;
+
+.bg-brand {
+    background-color: $brand-color;
+}
+
+.dark-section {
+    background-color: $brand-black;
+}
+
+.btn-primary {
+    background-color: $brand-color;
+    border-color: $brand-color;
+
+    &:hover, &:focus {
+        background-color: #4c4ac3;
+    }
+}
+
+
+//HELPER CLASSES (MOVE LATER)
+.border-16 {
+    border-radius: $border-radius-large;
+}
+.glow-lg {
+    //add effect here later
+}
+
+
+// Apply the Staatliches font to all headers
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+h3 {
+    line-height: 110%;
+    font-size: 24px;
+}
+
+@media (max-width: 492px) {
+    h3 {
+        font-size: 20px;
+    }
+}
+
+
+// Apply the Archivo font to body and paragraphs
+body, p, table, th {
+    font-family: 'Archivo', sans-serif;
+}
+
+.thead-dark {
+    background-color: #212F3C;
+    color: #EBEDEF;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+html, body {
+    height: 100%;
+    font-weight: 300;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container, #footer-container {
+    flex: 1;
+}
+
+footer {
+    background-color: $brand-black;
+    font-family: "Manrope", sans-serif;
+    color: $text-muted;
+
+    h5 {
+        font-weight: 600;
+        font-size: 1em;
+        color: white;
+    }
+    p, a {
+        text-decoration: none;
+        font-size: 0.9em;
+        color: $text-muted;
+        line-height: 2.3em;
+        transition: 0.3s;
+
+        &:hover {
+            color: white;
+            text-decoration: underline;
+            transition: 0.3s;
+        }
+    }
+
+    p {
+        line-height: 1.2em;
+    }
+}
+
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.navbar-container {
+    z-index: 10; /* Ensures the content stays above the overlay */
+}
+
+.nav-item {
+    font-family: "Manrope", sans-serif;
+    font-weight: 300;
+}
+
+.navbar-dark {
+    background-color: $brand-black;
+}
+.navbar-brand {
+    font-size: 1em;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-family: "Manrope", sans-serif;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+//Table style
+#watches-table img {
+    width: 100px; // Set the width of the image
+    height: 100px; // Force height to be the same as the width (making it square)
+    object-fit: cover; // Ensures the image maintains its aspect ratio and is cropped if necessary
+    border-radius: 4px; // Apply a 4px border radius
+  }
+  
+
+
