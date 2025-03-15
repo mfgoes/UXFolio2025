@@ -1,6 +1,10 @@
 // Import the Staatliches font from Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+// Slab font
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
+
+
 // Define border radius variables
 $border-radius-large: 16px;
 $underline-width: 3px;
@@ -37,12 +41,14 @@ $text-muted: #DADADA;
 }
 
 
-// Apply the Staatliches font to all headers
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Manrope", sans-serif;
+    font-family: "Montagu Slab", serif;
+    color: red;
     font-optical-sizing: auto;
     font-weight: 600;
+    margin-bottom: 2rem;
 }
+
 
 h3 {
     line-height: 110%;

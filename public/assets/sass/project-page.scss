@@ -6,12 +6,6 @@ $brand-color: #5856D6;
 $gray-20: #838383;
 $brand-black: #131417;
 
-//reset defaults 
-h2, h3 {
-    color: $brand-black;
-}
-
-
 
 //Thumbnail on project page (move to project SCSS file later
 /* Ensure that all thumbnails are square */
@@ -192,5 +186,60 @@ h2, h3 {
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: rgb(245, 245, 245)
+    //background-color: rgb(245, 245, 245)
+}
+
+.post-it {
+    padding: 20px;
+    min-height: 200px;
+    min-width: 200px;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+    color: #333;
+    transform: rotate(0deg);
+    overflow: hidden;
+}
+
+.post-it:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15);
+    transform: translateY(-5px) rotate(1deg);
+}
+
+.post-it h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.post-it p {
+    font-size: 0.9rem;
+}
+
+.yellow {
+    background-color: #fff9c4;
+    border-bottom: 3px solid #ffd54f;
+}
+
+.green {
+    background-color: #e8f5e9;
+    border-bottom: 3px solid #81c784;
+}
+
+.blue {
+    background-color: #e3f2fd;
+    border-bottom: 3px solid #64b5f6;
+}
+
+.pink {
+    background-color: #fce4ec;
+    border-bottom: 3px solid #f48fb1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .post-it {
+        min-height: 150px;
+    }
 }

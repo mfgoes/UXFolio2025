@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap");
 .bg-brand {
   background-color: #5856D6;
 }
@@ -19,10 +20,12 @@
   border-radius: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Manrope", sans-serif;
+h1, h2, h3 {
+  font-family: "Montagu Slab", serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 2rem;
 }
 
 h3 {
