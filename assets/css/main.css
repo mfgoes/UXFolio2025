@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap");
 .bg-brand {
@@ -20,17 +21,21 @@
   border-radius: 16px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Montagu Slab", serif;
+  color: inherit;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-style: normal;
-  margin-bottom: 2rem;
 }
 
 h3 {
   line-height: 110%;
   font-size: 24px;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 600;
 }
 
 @media (max-width: 492px) {
@@ -49,6 +54,10 @@ body, p, table, th {
 
 h1 {
   text-align: center;
+}
+
+img {
+  border-radius: var(--bs-border-radius-lg);
 }
 
 html, body {
@@ -87,6 +96,38 @@ footer p:hover, footer a:hover {
 }
 footer p {
   line-height: 1.2em;
+}
+
+.emoji-bullet-list {
+  list-style: none;
+  padding-left: 0;
+}
+.emoji-bullet-list li {
+  padding-left: 1.5em;
+  position: relative;
+  margin-bottom: 0.5em;
+}
+.emoji-bullet-list li:before {
+  content: "🔸";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.emoji-check-list {
+  list-style: none;
+  padding-left: 0;
+}
+.emoji-check-list li {
+  padding-left: 1.5em;
+  position: relative;
+  margin-bottom: 0.5em;
+}
+.emoji-check-list li:before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 form {

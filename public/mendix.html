@@ -88,21 +88,19 @@
 	</section>
 
 	<!-- Section 3: Production and Color -->
-	<section class="py-5 bg-paper">
+	<section class="py-5">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6">
 					
 					<div class="container mt-3">
-						<h2>Understanding the problem</h2>
-						<p>Mendix is one of the leading low-code software solutions specializing in enterprise solutions. This software is used by clients such as ABN Amro, PostNL, and Silver Cross, where security is essential.</p>				
-						<ul class="">
-							<li class=""><strong>Lack of Transparency</strong> – No clear overview of audit progress.</li>
-							<li class=""><strong>Inefficient Communication</strong> – Dispersed conversations across email, Slack, and tickets.</li>
-							<li class=""><strong>Manual Errors</strong> – Evidence validation was inconsistent, causing delays.</li>
-						</ul>
-				
-						<p>During my time in the internal apps team (BITS), we saw an opportunity to create a single platform where security officers, compliance teams, and evidence suppliers could efficiently collaborate and track audits.</p>
+						<h2>Introduction</h2>
+						<p>
+							Mendix is a one of the leading low-code software solutions specialising in enterprise solutions. This software is used by clients such as ABN Amro, PostNL, and Silver Cross, where security is essential. 
+							In order to prove the security of the platform, annual security checks are performed by Security Officers. Compliance teams manage certifications across multiple applications over strict deadlines, leading to:
+							lack of transparency (No clear overview of audit progress.),Inefficient Communication – Dispersed conversations across email, Slack, and tickets.
+							 Manual Errors – Evidence validation was inconsistent, causing delays.
+						</p>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -112,6 +110,11 @@
 		</div>
 	</section>
 
+	<section class="py-5">
+		<div class="container">
+			<img src="assets/images/mendix/process.png" alt="Production and Color" class="img-fluid">
+		</div>
+	</section>
 	<!-- Post its -->
 	<section class="py-5 bg-light">
 		<div class="container">
@@ -147,68 +150,22 @@
 		</div>
 	</section>
 	
-
 	<!-- Section 5: Full-width Image -->
 	<section class="py-5 bg-light">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 mb-4">
-					<h2 class="text-dark">Research process</h2>
-
-
-					<div class="accordion" id="historyAccordion">
-						<!-- Accordion Item 03 -->
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingThree">
-								<a class="accordion-button show text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-									<span class="me-3 text-uppercase">1.</span> Key questions
-								</a>
-							</h2>
-							<div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#historyAccordion">
-								<div class="accordion-body">
-									<ul>
-										<li><strong>User Needs:</strong> What pain points do compliance teams face? How do they currently track audits?</li>
-										<li><strong>Business Goals:</strong> Can we reduce certification delays while ensuring compliance accuracy?</li>
-										<li><strong>Technical Constraints:</strong> How can we integrate with existing Mendix tools?</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+					<h2 class="text-dark">Design process</h2>
+					<p><strong>Validating the Problem</strong></p>
+					<p>
+						To confirm the need for AuditON, I interviewed multiple users to identify workflow bottlenecks and past audit data. The results showed that around 70% of certification delays were due to miscommunication and missing evidence.
+					</p>
 					
-						<!-- Accordion Item 02 -->
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingTwo">
-								<a class="accordion-button collapsed text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-									<span class="me-3 text-uppercase">2.</span>Research methods
-								</a>
-							</h2>
-							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#historyAccordion">
-								<div class="accordion-body">
-									<p>📌 Stakeholder interviews with security officers & compliance managers<br>
-										📌 Workflow analysis to understand inefficiencies<br>
-										📌 User testing to validate concepts before development
-										</p>
-								</div>
-							</div>
-						</div>
-						<!-- Accordion Item 03 -->
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingOne">
-								<a class="accordion-button text-decoration-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									<span class="me-3 text-uppercase">3.</span>Research findings
-								</a>
-							</h2>
-							<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#historyAccordion">
-								<div class="accordion-body">
-									<p>🔸 Users needed a dashboard-first approach for visibility.<br>
-										🔸 Templates and automated validation could cut down repetitive manual checks.<br>
-										🔸 In-app chat had significant potential for reducing delays in communication.</p>
-		
-								</div>
-							</div>
-						</div>
-					
-					</div>
+					<ul class="emoji-bullet-list">
+						<li>Design a unified dashboard for managing audit steps.</li>
+						<li>Automate validation to reduce manual back-and-forth.</li>
+						<li>Embed a chat feature for real-time collaboration.</li>
+					</ul>				
 
 
 				
@@ -228,46 +185,104 @@
 			<div class="row align-items-center">
 				
 				<div class="col-md-6">
-					<img src="assets/images/mendix/miro.png" alt="Production and Color" class="img-fluid">
+					<img src="assets/images/mendix/audit process.png" alt="Production and Color" class="img-fluid">
 				</div>
 				<div class="col-md-6">
 					
 					<div class="container mt-3">
-						<h2>Design Process</h2>
+						<h2>Key findings</h2>
 						<p>
-							<strong>Validating the Problem</strong><br>
-							To confirm the need for AuditON, I analyzed workflow bottlenecks and past audit data. The results showed that around 70% of certification delays were due to miscommunication and missing evidence.
-							<br><br>
-							<strong>Solution Roadmap</strong><br>
-							💡 Design a unified dashboard for managing audit steps.<br>
-							💡 Automate validation to reduce manual back-and-forth.<br>
-							💡 Embed a chat feature for real-time collaboration..</p>
+							Most of the research was done through Stakeholder interviews with security officers & compliance managers. 
+							These were some key findigns:
+						</p>
+						<ul class="emoji-bullet-list">
+							<li>Users needed a dashboard-first approach for visibility.</li>
+							<li>Templates and automated validation could cut down repetitive manual checks.</li>
+							<li>In-app chat had significant potential for reducing delays in communication.</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="py-5">
-		<div class="container">
-		<img src="assets/images/mendix/process.png" alt="Production and Color" class="img-fluid">
-	</div>
-	</section>
 
-	
-	<!-- Section 6: Short Paragraphs -->
-	<section class="py-5 bg-white">
+	<!-- Post its 2 -->
+	<section class="py-5 bg-light">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit vestibulum erat, ut tincidunt odio vulputate ac.</p>
+				<h2 class="text-dark text-center">Results</h2>
+				<p class="text-center mb-4">After launching AuditON, we tracked key performance indicators:</p>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 mb-4">
+					<div class="post-it green">
+						<h3>2x Faster</h3>
+						<p>Annual Audit Completion Time</p>
+						<p class="text-muted">This speed was compared to their prior auditing process.</p>
+					</div>
 				</div>
-				<div class="col-md-6">
-					<p>Aliquam erat volutpat. Donec et ligula id felis viverra pulvinar non nec ante. Aenean sit amet suscipit libero.</p>
+				<div class="col-md-6 col-lg-4 mb-4">
+					<div class="post-it green">
+						<h3>50% less errors</h3>
+						<p>Error reduction from incorrect evidence submissions</p>
+						<p class="text-muted">Approximation based on input re-writes as opposed to the prior solution.</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4">
+					<div class="post-it green">
+						<h3>50% reach</h3>
+						<p>Half of the security officers started using our product in 2012</p>
+						<p class="text-muted">After this test phase, more security officers would be onboarded.</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	
+	 <!-- Section 6: Short Paragraphs -->
+	 <section class="py-5 bg-white">
+		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-lg-8">
+			  <h2>Final Design & Implementation</h2>
+			  <p>I iterated based on feedback and refined the design to include:</p>
+			  <ul class="emoji-check-list">
+				<li>A Kanban-style audit workflow for better progress tracking.</li>
+				<li>Automated error detection to flag incorrect evidence submissions.</li>
+				<li>Integrated messaging that tagged relevant stakeholders when an issue arose.</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </section>
 
+	  <!-- Full images -->
+	  <div class="row justify-content-center mb-2 ">
+		<div class="col-md-8 text-center">
+		  <img src="assets/images/mendix/sidepanel.png" alt="Audit Process" class="img-fluid rounded-3">
+		</div>
+	  </div>
+	  <div class="row justify-content-center">
+		<div class="col-md-8 text-center">
+		  <img src="assets/images/mendix/audit_home.png" alt="Audit Process" class="img-fluid rounded-3">
+		</div>
+	  </div>
+
+
+	  <!-- Success metrics -->
+	 <section class="py-5 bg-white">
+		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-lg-8">
+			  <h2>Testing roadmap</h2>
+			  <p>To validate the impact of AuditON, I’d use the HEART framework (focusing on Happiness, Engagement, Adoption, Retention, and Task Success) to measure how effectively it solves communication gaps, manual errors, and audit delays. Key tests would track user satisfaction through surveys. Other things such as task success and error rate could be tracked in-app (Quantitative). </p>
+			  
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	
 	<!-- Section - Up Next -->
 	<section class="py-5 bg-white">
 		<div class="container">

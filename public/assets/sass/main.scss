@@ -43,16 +43,20 @@ $text-muted: #DADADA;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montagu Slab", serif;
-    color: red;
+    color: inherit;
     font-optical-sizing: auto;
-    font-weight: 600;
-    margin-bottom: 2rem;
+    font-weight: 400;
 }
 
 
 h3 {
     line-height: 110%;
     font-size: 24px;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 600;
 }
 
 @media (max-width: 492px) {
@@ -76,6 +80,9 @@ h1 {
     text-align: center;
 }
 
+img {
+    border-radius: var(--bs-border-radius-lg) //!important; // This is equivalent to rounded-3
+}
 
 html, body {
     height: 100%;
@@ -118,6 +125,41 @@ footer {
     }
 }
 
+.emoji-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      padding-left: 1.5em;
+      position: relative;
+      margin-bottom: 0.5em;
+      
+      &:before {
+        content: "🔸";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .emoji-check-list {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      padding-left: 1.5em;
+      position: relative;
+      margin-bottom: 0.5em;
+      
+      &:before {
+        content: "✅";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
 
 form {
     max-width: 600px;
