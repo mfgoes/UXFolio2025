@@ -1,7 +1,7 @@
 
 // Define border radius variables
 $border-radius-large: 16px;
-$underline-width: 3px;
+$underline-width: 1px;
 $brand-color: #5856D6;
 $gray-20: #838383;
 $brand-black: #131417;
@@ -88,8 +88,6 @@ $brand-black: #131417;
  
     
     .card {
-        max-width: 70%; /* Limits card width to half on desktop */
-        margin: 0 auto; /* Centers the card */
         overflow: hidden;
         transition: opacity 0.3s ease;
         border-radius: $border-radius-large;
@@ -124,6 +122,7 @@ $brand-black: #131417;
 
     // Hover effect for h2 with underline animation
     h2.text-next-project {
+        font-size: 1.5em;
         position: relative;
         display: inline-block;
         color: white;
@@ -134,7 +133,7 @@ $brand-black: #131417;
             &::before, &::after {
                 content: "";
                 position: absolute;
-                bottom: -10px;
+                bottom: -5px;
                 width: 0;
                 height: $underline-width;
                 background-color: white; // underline color
@@ -153,6 +152,10 @@ $brand-black: #131417;
                 transform-origin: left;
             }
         }
+    }
+
+    h3 {
+        font-size: 1.2em;
     }
 
     // Hover effect for the entire .up-next-card

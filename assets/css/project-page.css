@@ -75,8 +75,6 @@
   margin-top: 80px;
 }
 .up-next-card .card {
-  max-width: 70%; /* Limits card width to half on desktop */
-  margin: 0 auto; /* Centers the card */
   overflow: hidden;
   transition: opacity 0.3s ease;
   border-radius: 16px;
@@ -106,6 +104,7 @@
   }
 }
 .up-next-card h2.text-next-project {
+  font-size: 1.5em;
   position: relative;
   display: inline-block;
   color: white;
@@ -114,9 +113,9 @@
 .up-next-card h2.text-next-project.underline-effect::before, .up-next-card h2.text-next-project.underline-effect::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -5px;
   width: 0;
-  height: 3px;
+  height: 1px;
   background-color: white;
   transition: width 0.6s ease 0.1s;
 }
@@ -127,6 +126,9 @@
 .up-next-card h2.text-next-project.underline-effect::after {
   right: 50%;
   transform-origin: left;
+}
+.up-next-card h3 {
+  font-size: 1.2em;
 }
 .up-next-card:hover h2.text-next-project {
   transform: translateY(-3px);
