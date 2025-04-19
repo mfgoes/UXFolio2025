@@ -36,50 +36,44 @@ function populateTable(rows) {
             tableBody.appendChild(tr);
         }
     });
+    
+    // After populating the table, immediately display cards
+    displayCards();
 }
 
 const table = document.getElementById('watches-table');
 const cardsView = document.getElementById('cards-view');
-const toggleViewBtn = document.getElementById('toggle-view-btn');
 
-function toggleView() {
-    if (table.classList.contains('d-none')) {
-        // Show table and hide cards
-        table.classList.remove('d-none');
-        cardsView.classList.add('d-none');
-        toggleViewBtn.textContent = "Toggle Card View";
-    } else {
-        // Switch to card view
-        const rows = document.querySelectorAll('#watches-table tbody tr');
-        cardsView.innerHTML = ''; // Clear previous cards
+// New function to display cards without toggling
+function displayCards() {
+    const rows = document.querySelectorAll('#watches-table tbody tr');
+    cardsView.innerHTML = ''; // Clear previous cards
 
-        // Create an array of promises for each card
-        const cardPromises = Array.from(rows).map(row => {
-            const data = {
-                name: row.cells[0].textContent,
-                description: row.cells[1].textContent,
-                category: row.cells[2].textContent,
-                price: row.cells[3].textContent,
-                image: row.cells[4].querySelector('img').src,
-                Project_link: row.dataset.Project_link // Accessing from dataset
-            };
-            return createCard(data); // Each card is created asynchronously
-        });
+    // Create an array of promises for each card
+    const cardPromises = Array.from(rows).map(row => {
+        const data = {
+            name: row.cells[0].textContent,
+            description: row.cells[1].textContent,
+            category: row.cells[2].textContent,
+            price: row.cells[3].textContent,
+            image: row.cells[4].querySelector('img').src,
+            Project_link: row.dataset.Project_link // Accessing from dataset
+        };
+        return createCard(data); // Each card is created asynchronously
+    });
 
-        // Wait for all cards to be created before appending
-        Promise.all(cardPromises).then(cards => {
-            cards.forEach(card => cardsView.appendChild(card));
-        });
+    // Wait for all cards to be created before appending
+    Promise.all(cardPromises).then(cards => {
+        cards.forEach(card => cardsView.appendChild(card));
+    });
 
-        // Hide table and show cards
-        table.classList.add('d-none');
-        cardsView.classList.remove('d-none');
-        toggleViewBtn.textContent = "Toggle Table View";
-    }
+    // Keep table hidden and show cards
+    table.classList.add('d-none');
+    cardsView.classList.remove('d-none');
 }
 
-
-toggleViewBtn.addEventListener('click', toggleView);
+// Remove the toggle button event listener since we're not using it anymore
+// toggleViewBtn.addEventListener('click', toggleView);
 
 let cardTemplate = '';
 

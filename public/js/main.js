@@ -41,42 +41,48 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
-// Function to populate the card view on page load
-function populateCardView(rows) {
-    const table = document.getElementById('watches-table');
-    const cardsView = document.getElementById('cards-view');
-    const toggleViewBtn = document.getElementById('toggle-view-btn');
+function populateTable(rows) {
+    const tableBody = document.querySelector('#watches-table tbody');
 
-    // Clear the card view first
-    cardsView.innerHTML = '';
+    rows.forEach(row => {
+        if (row.trim() !== '') {
+            const cols = row.split(',');
 
-    // Populate cards from CSV data
-    const cardPromises = rows.map(row => {
-        const cols = row.split(',');
+            // Create a new table row
+            const tr = document.createElement('tr');
 
-        const data = {
-            name: cols[0].trim(),
-            description: cols[1].trim(),
-            category: cols[2].trim(),
-            price: cols[3].trim(),
-            image: cols[4].trim(),
-            Project_link: cols[6] ? cols[6].trim() : ''
-        };
+            // Set data attributes for the modal (including specs)
+            tr.dataset.name = cols[0].trim();
+            tr.dataset.description = cols[1].trim();
+            tr.dataset.category = cols[2].trim();
+            tr.dataset.price = cols[3].trim();
+            tr.dataset.image = cols[4].trim();
+            tr.dataset.specs = cols[5] ? cols[5].trim() : ''; 
+            tr.dataset.Project_link = cols[6] ? cols[6].trim() : ''; 
+            tr.dataset.Ref_link = cols[7] ? cols[7].trim() : ''; 
 
-        return createCard(data); // createCard is in ViewManager.js
+            // Create and append table cells
+            cols.slice(0, 5).forEach((col, index) => {
+                const td = document.createElement('td');
+                if (index === 4) { // Image column
+                    const img = document.createElement('img');
+                    img.src = col.trim();
+                    img.alt = cols[0].trim(); // Watch name as alt text
+                    td.appendChild(img);
+                } else {
+                    td.textContent = col.trim(); // Remove extra whitespace
+                }
+                tr.appendChild(td);
+            });
+
+            // Append the row to the table body
+            tableBody.appendChild(tr);
+        }
     });
-
-    // Append the cards to the card view
-    Promise.all(cardPromises).then(cards => {
-        cards.forEach(card => cardsView.appendChild(card));
-
-        // Update visibility for default card view
-        table.classList.add('d-none'); // Hide table
-        cardsView.classList.remove('d-none'); // Show card view
-        toggleViewBtn.textContent = "Toggle Table View"; // Update button text
-    });
+    
+    // REMOVE THIS LINE to prevent automatic card display
+    // displayCards();
 }
-
 // Select all cards
 const cards = document.querySelectorAll('.card');
 

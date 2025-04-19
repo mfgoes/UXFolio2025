@@ -2,78 +2,106 @@
 // Use CASE_STUDY_FIELDS to generate forms, collect data, etc.
 import { CASE_STUDY_FIELDS } from './constants.js';
 
-// ----- Attach functions to window for inline event handlers ----- //
-window.createNewCaseStudy = createNewCaseStudy;
-window.cancelCreate = cancelCreate;
-window.cancelEdit = cancelEdit;
-window.editCaseStudy = editCaseStudy;
-window.deleteCaseStudy = deleteCaseStudy;
+// Global flag to prevent multiple initializations
+if (window.caseStudiesInitialized) {
+  console.log('casestudies.js: Already initialized, skipping');
+} else {
+  window.caseStudiesInitialized = true;
+  console.log('casestudies.js: Initializing');
 
-// ----- Initialization after DOM loads ----- //
-document.addEventListener('DOMContentLoaded', () => {
-  // Generate form fields for create & edit forms
-  generateFormFields('createCaseStudyForm', 'create');
-  generateFormFields('editCaseStudyForm', 'edit');
+  // ----- Attach functions to window for inline event handlers ----- //
+  window.createNewCaseStudy = createNewCaseStudy;
+  window.cancelCreate = cancelCreate;
+  window.cancelEdit = cancelEdit;
+  window.editCaseStudy = editCaseStudy;
+  window.deleteCaseStudy = deleteCaseStudy;
 
-  // Attach event listeners for form submissions
-  const createForm = document.getElementById('createCaseStudyForm');
-  if (createForm) {
-    createForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const newCaseStudy = getFormData('createCaseStudyForm', 'create');
-      try {
-        await createCaseStudy(newCaseStudy); // Assumes createCaseStudy is defined elsewhere
-        await fetchAndDisplayCaseStudies();
-        cancelCreate();
-      } catch (error) {
-        console.error('Error creating case study:', error);
-        alert('Failed to create case study');
-      }
-    });
-  }
+  // ----- Initialization after DOM loads ----- //
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('casestudies.js: DOM content loaded');
+    
+    // Generate form fields for create & edit forms
+    generateFormFields('createCaseStudyForm', 'create');
+    generateFormFields('editCaseStudyForm', 'edit');
 
-  const editForm = document.getElementById('editCaseStudyForm');
-  if (editForm) {
-    editForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const updatedCaseStudy = getFormData('editCaseStudyForm', 'edit');
-      const idField = document.getElementById('editId');
-      if (idField) {
-        updatedCaseStudy.id = idField.value;
-      }
-      try {
-        await updateCaseStudy(updatedCaseStudy); // Assumes updateCaseStudy is defined elsewhere
-        await fetchAndDisplayCaseStudies();
-        cancelEdit();
-      } catch (error) {
-        console.error('Error updating case study:', error);
-        alert('Failed to update case study');
-      }
-    });
-  }
+    // Attach event listeners for form submissions
+    const createForm = document.getElementById('createCaseStudyForm');
+    if (createForm) {
+      createForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const newCaseStudy = getFormData('createCaseStudyForm', 'create');
+        try {
+          await createCaseStudy(newCaseStudy); // Assumes createCaseStudy is defined elsewhere
+          await fetchAndDisplayCaseStudies();
+          cancelCreate();
+        } catch (error) {
+          console.error('Error creating case study:', error);
+          alert('Failed to create case study');
+        }
+      });
+    }
 
-  // Fetch and display case studies when the page loads
-  fetchAndDisplayCaseStudies();
-});
+    const editForm = document.getElementById('editCaseStudyForm');
+    if (editForm) {
+      editForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const updatedCaseStudy = getFormData('editCaseStudyForm', 'edit');
+        const idField = document.getElementById('editId');
+        if (idField) {
+          updatedCaseStudy.id = idField.value;
+        }
+        try {
+          await updateCaseStudy(updatedCaseStudy); // Assumes updateCaseStudy is defined elsewhere
+          await fetchAndDisplayCaseStudies();
+          cancelEdit();
+        } catch (error) {
+          console.error('Error updating case study:', error);
+          alert('Failed to update case study');
+        }
+      });
+    }
+
+    // Fetch and display case studies when the page loads
+    // But first check if they've already been displayed
+    if (!window.caseStudiesDisplayed) {
+      console.log('casestudies.js: Displaying case studies for the first time');
+      fetchAndDisplayCaseStudies();
+    } else {
+      console.log('casestudies.js: Case studies already displayed, skipping');
+    }
+  });
+}
 
 // ----- Functions ----- //
 
 // Delete a case study
 async function deleteCaseStudy(id) {
-    try {
-      if (!confirm('Are you sure you want to delete this case study?')) return;
-      await deleteCaseStudyFromServer(id);
-      await fetchAndDisplayCaseStudies();
-    } catch (error) {
-      console.error('Error deleting case study:', error);
-      alert('Failed to delete case study.');
-    }
+  try {
+    if (!confirm('Are you sure you want to delete this case study?')) return;
+    await deleteCaseStudyFromServer(id);
+    await fetchAndDisplayCaseStudies();
+  } catch (error) {
+    console.error('Error deleting case study:', error);
+    alert('Failed to delete case study.');
   }
+}
+
 // Fetch and display case studies
 async function fetchAndDisplayCaseStudies() {
+  // Set flag to indicate case studies have been displayed
+  window.caseStudiesDisplayed = true;
+  
   try {
+    console.log('Fetching case studies...');
     const caseStudies = await fetchCaseStudies();
     const container = document.getElementById('caseStudiesList');
+    
+    if (!container) {
+      console.error('Case studies container not found!');
+      return;
+    }
+    
+    console.log(`Rendering ${caseStudies.length} case studies`);
     container.innerHTML = '';
 
     caseStudies.forEach(caseStudy => {
@@ -85,7 +113,6 @@ async function fetchAndDisplayCaseStudies() {
             <h5 class="card-title">${caseStudy.title}</h5>
             <p class="card-text">${caseStudy.subtitle}</p>
             <p class="card-text text-muted">${caseStudy.delivery_date || ''}</p>
-
 
             <div class="btn-group">
               <a href="/case-study/${caseStudy.id}" target="_blank" class="btn btn-sm btn-outline-primary">View</a>
@@ -182,8 +209,6 @@ function generateFormFields(formId, prefix) {
   }
 }
 
-  
-
 // Collect form data from inputs with a given form ID and prefix
 function getFormData(formId, prefix) {
   const data = {};
@@ -246,44 +271,41 @@ async function editCaseStudy(id) {
   }
 }
 
-  
 // Hide the edit form and reset its content
 function cancelEdit() {
-    const editForm = document.getElementById('editCaseStudyForm');
-    const editContainer = document.getElementById('editFormContainer');
-    
-    if (editForm) {
-      editForm.reset(); // Clear the form fields
-    }
-    
-    // Hide the edit form container
-    editContainer.classList.add('d-none');
+  const editForm = document.getElementById('editCaseStudyForm');
+  const editContainer = document.getElementById('editFormContainer');
+  
+  if (editForm) {
+    editForm.reset(); // Clear the form fields
   }
   
+  // Hide the edit form container
+  editContainer.classList.add('d-none');
+}
+
 // Show the create form container and reset the form
 function createNewCaseStudy() {
-    const createForm = document.getElementById('createCaseStudyForm');
-    const createContainer = document.getElementById('createFormContainer');
-    
-    if (createForm) {
-      createForm.reset(); // Clear the form fields
-    }
+  const createForm = document.getElementById('createCaseStudyForm');
+  const createContainer = document.getElementById('createFormContainer');
   
-    // Show the create form container
-    createContainer.classList.remove('d-none');
+  if (createForm) {
+    createForm.reset(); // Clear the form fields
   }
-  
+
+  // Show the create form container
+  createContainer.classList.remove('d-none');
+}
 
 // Hide the create new case study form and reset the form fields
 function cancelCreate() {
-    const createForm = document.getElementById('createCaseStudyForm');
-    const createContainer = document.getElementById('createFormContainer');
-    
-    if (createForm) {
-      createForm.reset(); // Clear the form fields
-    }
+  const createForm = document.getElementById('createCaseStudyForm');
+  const createContainer = document.getElementById('createFormContainer');
   
-    // Hide the create form container
-    createContainer.classList.add('d-none');
+  if (createForm) {
+    createForm.reset(); // Clear the form fields
   }
-  
+
+  // Hide the create form container
+  createContainer.classList.add('d-none');
+}
