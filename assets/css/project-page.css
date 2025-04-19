@@ -1,3 +1,7 @@
+h2, h3 {
+  color: #131417;
+}
+
 /* Ensure that all thumbnails are square */
 .carousel-thumbnails .carousel-thumbnail {
   width: 80px; /* Set a fixed width */
@@ -75,6 +79,8 @@
   margin-top: 80px;
 }
 .up-next-card .card {
+  max-width: 70%; /* Limits card width to half on desktop */
+  margin: 0 auto; /* Centers the card */
   overflow: hidden;
   transition: opacity 0.3s ease;
   border-radius: 16px;
@@ -104,7 +110,6 @@
   }
 }
 .up-next-card h2.text-next-project {
-  font-size: 1.5em;
   position: relative;
   display: inline-block;
   color: white;
@@ -113,9 +118,9 @@
 .up-next-card h2.text-next-project.underline-effect::before, .up-next-card h2.text-next-project.underline-effect::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -10px;
   width: 0;
-  height: 1px;
+  height: 3px;
   background-color: white;
   transition: width 0.6s ease 0.1s;
 }
@@ -126,9 +131,6 @@
 .up-next-card h2.text-next-project.underline-effect::after {
   right: 50%;
   transform-origin: left;
-}
-.up-next-card h3 {
-  font-size: 1.2em;
 }
 .up-next-card:hover h2.text-next-project {
   transform: translateY(-3px);
@@ -154,22 +156,35 @@
   border-radius: 16px;
 }
 
+.accordion-button:not(.collapsed) {
+  background-color: rgb(245, 245, 245);
+}
+
 .post-it {
   padding: 20px;
   min-height: 200px;
-  min-width: 200px;
   position: relative;
   border-radius: 2px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transform: rotate(0deg);
-  overflow: hidden;
 }
 
 .post-it:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   transform: translateY(-5px) rotate(1deg);
+}
+
+.post-it::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 16px 16px 0;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.1) transparent;
 }
 
 .post-it h3 {
@@ -205,6 +220,6 @@
 /* Responsive adjustments */
 @media (max-width: 767px) {
   .post-it {
-    min-height: 150px;
+      min-height: 150px;
   }
 }
