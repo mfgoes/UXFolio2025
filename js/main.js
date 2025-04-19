@@ -83,20 +83,86 @@ function populateTable(rows) {
     // REMOVE THIS LINE to prevent automatic card display
     // displayCards();
 }
-// Select all cards
-const cards = document.querySelectorAll('.card');
 
-// Iterate over each card
-cards.forEach(card => {
-    const button = card.querySelector('.btn-home-arrow'); // The button inside each card
+// Add the missing populateCardView function
+function populateCardView(rows) {
+    const cardContainer = document.querySelector('#card-container');
     
-    // On mouse enter, trigger the hover state
-    card.addEventListener('mouseenter', () => {
-        button.classList.add('hover');
+    // If card container doesn't exist, create it or exit silently
+    if (!cardContainer) {
+        console.warn('Card container not found in the DOM');
+        return;
+    }
+    
+    // Clear existing cards if any
+    cardContainer.innerHTML = '';
+    
+    // Loop through CSV rows and create cards
+    rows.forEach(row => {
+        if (row.trim() !== '') {
+            const cols = row.split(',');
+            
+            // Extract data from columns
+            const name = cols[0].trim();
+            const description = cols[1].trim();
+            const category = cols[2].trim();
+            const price = cols[3].trim();
+            const image = cols[4].trim();
+            const specs = cols[5] ? cols[5].trim() : '';
+            const projectLink = cols[6] ? cols[6].trim() : '';
+            const refLink = cols[7] ? cols[7].trim() : '';
+            
+            // Create card element
+            const card = document.createElement('div');
+            card.className = 'col-md-4 mb-4';
+            card.innerHTML = `
+                <div class="card h-100">
+                    <img src="${image}" class="card-img-top" alt="${name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text">${description.substring(0, 100)}${description.length > 100 ? '...' : ''}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-secondary">${category}</span>
+                            <span class="price-tag">${price}</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="${projectLink || '#'}" class="btn btn-primary btn-home-arrow">View Details</a>
+                    </div>
+                </div>
+            `;
+            
+            // Add card to container
+            cardContainer.appendChild(card);
+        }
     });
+    
+    // Initialize card hover effects
+    initializeCardHoverEffects();
+}
 
-    // On mouse leave, remove the hover state
-    card.addEventListener('mouseleave', () => {
-        button.classList.remove('hover');
+// Function to initialize hover effects on cards
+function initializeCardHoverEffects() {
+    // Select all cards
+    const cards = document.querySelectorAll('.card');
+
+    // Iterate over each card
+    cards.forEach(card => {
+        const button = card.querySelector('.btn-home-arrow'); // The button inside each card
+        
+        if (button) {
+            // On mouse enter, trigger the hover state
+            card.addEventListener('mouseenter', () => {
+                button.classList.add('hover');
+            });
+
+            // On mouse leave, remove the hover state
+            card.addEventListener('mouseleave', () => {
+                button.classList.remove('hover');
+            });
+        }
     });
-});
+}
+
+// Move the card hover effect logic to a function and call it
+initializeCardHoverEffects();

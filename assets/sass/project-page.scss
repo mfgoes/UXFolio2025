@@ -1,4 +1,3 @@
-
 // Define border radius variables
 $border-radius-large: 16px;
 $underline-width: 1px;
@@ -6,243 +5,607 @@ $brand-color: #5856D6;
 $gray-20: #838383;
 $brand-black: #131417;
 
+// Additional variables based on existing color usage
+$white: #fff;
+$light-gray: #c0c0c0;
+$paper-bg: #F3F3EF;
+$overlay-bg: rgba(0, 0, 0, 0.5);
 
-//Thumbnail on project page (move to project SCSS file later
-/* Ensure that all thumbnails are square */
-.carousel-thumbnails .carousel-thumbnail {
-    width: 80px; /* Set a fixed width */
-    height: 80px; /* Set a fixed height to make it square */
-    padding: 0; /* Remove padding to keep it perfectly square */
+// Headings
+h2, h3 {
+  color: $brand-black;
 }
 
-.carousel-thumbnails .carousel-thumbnail img {
-    width: 100%; /* Ensure image fills the button */
-    height: 100%; /* Ensure image fills the button */
-    object-fit: cover; /* Keep the image proportions and crop it to fill */
-}
-
-/* Additional styling to align the thumbnails in a row */
+// Carousel thumbnails
 .carousel-thumbnails {
-    gap: 10px; /* Space between thumbnails */
-}
-
-/* Active thumbnail style */
-.carousel-thumbnails .carousel-thumbnail.active img {
-    border: 1px solid $brand-color; /* Add a border to the active thumbnail */
-    //box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Highlight active thumbnail */
-}
-
-/* Ensure that carousel images are square */
-.square-carousel-img {
-    width: 100%; /* Make image fill the width of the container */
-    max-width: 1200px;
-    height: auto; /* Adjust height based on width while keeping the aspect ratio */
-    aspect-ratio: 3 / 2; /* Ensure 1:1 aspect ratio for square images */
-    object-fit: cover; /* Ensure image covers the area without distortion */
-    display: block; /* Ensure the image behaves like a block element */
-    border-radius: $border-radius-large;
-}
-@media (max-width: 767px) {
-    .square-carousel-img {
-        width: 90%; /* Card will take 90% width on mobile */
-    }
-}
-
-//Basic styling
-.specs-subheader {
-    font-weight: 300;
-    font-size: 1em;
-    letter-spacing: 1px;
-    color: $gray-20;
-    border-bottom: 1px solid #c0c0c0;
-    padding-bottom: 8px;
-    margin-right: 100px;
-}
-
-.text-gray-brand {
-    color: $gray-20;
-}
-
-.bg-paper {
-    background-color: #F3F3EF;
-    color: $brand-black;
-
-    h2, h3 {
-        color: $brand-black;
-    }
-}
-
-.label {
-    font-family: "Manrope", sans-serif;
-    font-size: 0.8em;
-}
-
-// UP NEXT CARD STYLING
-.up-next-card {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
-    margin-bottom: 80px;
-    margin-top: 80px;
- 
+  gap: 10px; // Space between thumbnails
+  
+  .carousel-thumbnail {
+    width: 80px;
+    height: 80px;
+    padding: 0;
     
-    .card {
-        overflow: hidden;
-        transition: opacity 0.3s ease;
-        border-radius: $border-radius-large;
-        position: relative;
-
-        &:hover {
-            opacity: 0.85;
-        }
-
-        .card-img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-            border-radius: inherit;
-        }
-
-        .card-img-overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: inherit;
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-
-    @media (max-width: 767px) {
-        .card {
-            max-width: 90%; /* Card will take 90% width on mobile */
-        }
+    
+    &.active {
+      img {
+        border: 1px solid $brand-color;
+      }
     }
-
-    // Hover effect for h2 with underline animation
-    h2.text-next-project {
-        font-size: 1.5em;
-        position: relative;
-        display: inline-block;
-        color: white;
-        transition: transform 0.3s ease;
-
-        &.underline-effect {
-            // Underline animation setup
-            &::before, &::after {
-                content: "";
-                position: absolute;
-                bottom: -5px;
-                width: 0;
-                height: $underline-width;
-                background-color: white; // underline color
-                transition: width 0.6s ease 0.1s;
-            }
-
-            // Left part of the underline
-            &::before {
-                left: 50%;
-                transform-origin: right;
-            }
-
-            // Right part of the underline
-            &::after {
-                right: 50%;
-                transform-origin: left;
-            }
-        }
-    }
-
-    h3 {
-        font-size: 1.2em;
-    }
-
-    // Hover effect for the entire .up-next-card
-    &:hover h2.text-next-project {
-        transform: translateY(-3px); // Move text upwards on hover
-    }
-
-    &:hover h2.text-next-project.underline-effect::before {
-        width: 50%; // Expand from center to the left
-        transform: scaleX(1); // Expand left part
-    }
-
-    &:hover h2.text-next-project.underline-effect::after {
-        width: 50%; // Expand from center to the right
-        transform: scaleX(1); // Expand right part
-    }
+  }
 }
 
-
-// Styling for the horizontal line
-.section-line {
-    border: none;
-    height: 1px;
-    background-color: #7d7d7d;  // Light gray color for the line
-    margin-bottom: 30px;  // Adjust this value to create enough spacing
-    width: 100%;  // Ensures the line takes up the full width of the container
+// Square carousel images
+.square-carousel-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
+  border-radius: $border-radius-large;
+  
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
-.img-rounded {
-    border-radius: $border-radius-large;
+// Specs section styling
+.specs-subheader {
+  font-weight: 500;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  color: $gray-20;
+  border-bottom: $underline-width solid $light-gray;
+  padding-bottom: 8px;
+  margin-right: 30px;
+  text-transform: uppercase;
 }
 
-.accordion-button:not(.collapsed) {
-    //background-color: rgb(245, 245, 245)
+// Text colors
+.text-gray-brand {
+  color: $gray-20;
 }
 
-.post-it {
-    padding: 20px;
-    min-height: 200px;
-    min-width: 200px;
-    position: relative;
-    border-radius: 2px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(.25,.8,.25,1);
-    color: #333;
-    transform: rotate(0deg);
+// Section backgrounds
+.bg-paper {
+  background-color: $paper-bg;
+  color: $brand-black;
+  
+  h2, h3 {
+    color: $brand-black;
+  }
+}
+
+// Section spacing
+section {
+  padding: 4rem 0;
+  
+  @media (max-width: 767px) {
+    padding: 3rem 0;
+  }
+}
+
+// Label styling
+.label {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8em;
+}
+
+// Project navigation card
+.up-next-card {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  margin: {
+    top: 80px;
+    bottom: 80px;
+  }
+  
+  .card {
+    max-width: 70%;
+    margin: 0 auto;
     overflow: hidden;
+    transition: opacity 0.3s ease;
+    border-radius: $border-radius-large;
+    position: relative;
+    
+    &:hover {
+      opacity: 0.85;
+    }
+    
+    .card-img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+    }
+    
+    .card-img-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: inherit;
+      padding: 2rem 1rem; /* Added padding to ensure content stays within bounds */
+    }
+    
+    @media (max-width: 767px) {
+      max-width: 90%;
+    }
+  }
+  
+  h2.text-next-project {
+    position: relative;
+    display: inline-block;
+    color: white;
+    transition: transform 0.3s ease;
+    font-size: calc(1.2rem + 0.6vw); /* Responsive font size that scales with viewport */
+    max-width: 100%; /* Ensure text doesn't overflow container */
+    word-wrap: break-word; /* Allow long words to break */
+    
+    &.underline-effect {
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 0;
+        height: 3px;
+        background-color: white;
+        transition: width 0.6s ease 0.1s;
+      }
+      
+      &::before {
+        left: 50%;
+        transform-origin: right;
+      }
+      
+      &::after {
+        right: 50%;
+        transform-origin: left;
+      }
+    }
+  }
+  
+  h3 {
+    font-size: calc(1rem + 0.3vw); /* Smaller responsive font size for subtitle */
+    max-width: 100%;
+  }
+  
+  &:hover {
+    h2.text-next-project {
+      transform: translateY(-3px);
+      
+      &.underline-effect {
+        &::before {
+          width: 50%;
+          transform: scaleX(1);
+        }
+        
+        &::after {
+          width: 50%;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+  
+  /* Additional responsive adjustments */
+  @media (max-width: 576px) {
+    h2.text-next-project {
+      font-size: 1.4rem; /* Fixed smaller size for very small screens */
+    }
+    
+    h3 {
+      font-size: 1.1rem;
+    }
+    
+    .btn {
+      font-size: 0.9rem;
+      padding: 0.375rem 0.75rem;
+    }
+  }
 }
 
-.post-it:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15);
+// Section line
+.section-line {
+  border: none;
+  height: 1px;
+  background-color: #7d7d7d;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+// Rounded images
+.img-rounded {
+  border-radius: $border-radius-large;
+}
+
+// Accordion styling
+.accordion-button {
+  &:not(.collapsed) {
+    background-color: rgb(245, 245, 245);
+  }
+}
+
+// Post-it notes styling
+.post-it {
+  padding: 20px;
+  min-height: 200px;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform: rotate(0deg);
+  
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     transform: translateY(-5px) rotate(1deg);
-}
-
-.post-it h3 {
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;
+  }
+  
+  h3 {
     font-size: 1.2rem;
     margin-bottom: 12px;
     font-weight: 600;
-}
-
-.post-it p {
+  }
+  
+  p {
     font-size: 0.9rem;
+  }
+  
+  @media (max-width: 767px) {
+    min-height: 150px;
+  }
 }
 
+// Post-it color variations
 .yellow {
-    background-color: #fff9c4;
-    border-bottom: 3px solid #ffd54f;
+  background-color: #fff9c4;
+  border-bottom: 3px solid #ffd54f;
 }
 
 .green {
-    background-color: #e8f5e9;
-    border-bottom: 3px solid #81c784;
+  background-color: #e8f5e9;
+  border-bottom: 3px solid #81c784;
 }
 
 .blue {
-    background-color: #e3f2fd;
-    border-bottom: 3px solid #64b5f6;
+  background-color: #e3f2fd;
+  border-bottom: 3px solid #64b5f6;
 }
 
 .pink {
-    background-color: #fce4ec;
-    border-bottom: 3px solid #f48fb1;
+  background-color: #fce4ec;
+  border-bottom: 3px solid #f48fb1;
 }
 
-/* Responsive adjustments */
-@media (max-width: 767px) {
-    .post-it {
-        min-height: 150px;
+// Introduction section styling
+.intro-section {
+  position: relative;
+  
+  .intro-highlight {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $brand-black;
+    border-left: 3px solid $brand-color;
+    padding-left: 15px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .intro-metrics-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    .metrics-teaser {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: $gray-20;
     }
+    
+    .metrics-dots {
+      display: flex;
+      gap: 6px;
+      
+      .metric-dot {
+        width: 8px;
+        height: 8px;
+        background-color: $brand-color;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: pulse 2s infinite;
+        
+        &:nth-child(2) {
+          animation-delay: 0.4s;
+        }
+        
+        &:nth-child(3) {
+          animation-delay: 0.8s;
+        }
+      }
+    }
+  }
+  
+  .security-illustration {
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      z-index: 2;
+    }
+  }
+  
+  .security-visual-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-radius: $border-radius-large;
+    overflow: hidden;
+    
+    .audit-diagram {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      
+      .audit-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: $brand-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        box-shadow: 0 0 0 10px rgba($brand-color, 0.1);
+        
+        .center-icon {
+          color: white;
+          font-size: 2rem;
+        }
+        
+        .center-pulse {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: rgba($brand-color, 0.3);
+          z-index: -1;
+          animation: pulse-ring 2s infinite;
+        }
+      }
+      
+      .audit-orbits {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        
+        .orbit {
+          position: absolute;
+          border: 1px dashed rgba($brand-color, 0.3);
+          border-radius: 50%;
+          
+          &.orbit-1 {
+            width: 150px;
+            height: 150px;
+            top: -75px;
+            left: -75px;
+            animation: rotate 15s linear infinite;
+          }
+          
+          &.orbit-2 {
+            width: 220px;
+            height: 220px;
+            top: -110px;
+            left: -110px;
+            animation: rotate 25s linear infinite reverse;
+          }
+          
+          &.orbit-3 {
+            width: 290px;
+            height: 290px;
+            top: -145px;
+            left: -145px;
+            animation: rotate 35s linear infinite;
+          }
+        }
+      }
+      
+      .audit-nodes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        
+        .node {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          background-color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          
+          &::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: $gray-20;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+          
+          &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            
+            &::after {
+              opacity: 1;
+            }
+          }
+          
+          i {
+            color: $brand-color;
+            font-size: 1.2rem;
+          }
+          
+          &.node-1 {
+            top: 30%;
+            left: 15%;
+          }
+          
+          &.node-2 {
+            top: 65%;
+            left: 25%;
+          }
+          
+          &.node-3 {
+            top: 25%;
+            right: 20%;
+          }
+          
+          &.node-4 {
+            top: 60%;
+            right: 15%;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .security-illustration {
+      height: 280px;
+    }
+    
+    .security-visual-fallback {
+      .audit-diagram {
+        .audit-orbits {
+          .orbit-3 {
+            width: 240px;
+            height: 240px;
+            top: -120px;
+            left: -120px;
+          }
+        }
+        
+        .audit-nodes {
+          .node {
+            width: 40px;
+            height: 40px;
+            
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Container images spacing
+.container {
+  img.img-fluid {
+    margin-bottom: 1rem;
+  }
+}
+
+// Responsive typography
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
 }
