@@ -98,121 +98,53 @@ section {
   font-size: 0.8em;
 }
 
-// Project navigation card
-.up-next-card {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  color: inherit;
-  margin: {
-    top: 80px;
-    bottom: 80px;
-  }
-  
-  .card {
-    max-width: 70%;
-    margin: 0 auto;
-    overflow: hidden;
-    transition: opacity 0.3s ease;
-    border-radius: $border-radius-large;
-    position: relative;
-    
-    &:hover {
-      opacity: 0.85;
-    }
-    
-    .card-img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-      border-radius: inherit;
-    }
-    
-    .card-img-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: inherit;
-      padding: 2rem 1rem; /* Added padding to ensure content stays within bounds */
-    }
-    
-    @media (max-width: 767px) {
-      max-width: 90%;
-    }
-  }
-  
-  h2.text-next-project {
-    position: relative;
-    display: inline-block;
-    color: white;
-    transition: transform 0.3s ease;
-    font-size: calc(1.2rem + 0.6vw); /* Responsive font size that scales with viewport */
-    max-width: 100%; /* Ensure text doesn't overflow container */
-    word-wrap: break-word; /* Allow long words to break */
-    
-    &.underline-effect {
-      &::before, &::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        width: 0;
-        height: 3px;
-        background-color: white;
-        transition: width 0.6s ease 0.1s;
-      }
-      
-      &::before {
-        left: 50%;
-        transform-origin: right;
-      }
-      
-      &::after {
-        right: 50%;
-        transform-origin: left;
-      }
-    }
-  }
-  
-  h3 {
-    font-size: calc(1rem + 0.3vw); /* Smaller responsive font size for subtitle */
-    max-width: 100%;
-  }
-  
-  &:hover {
-    h2.text-next-project {
-      transform: translateY(-3px);
-      
-      &.underline-effect {
-        &::before {
-          width: 50%;
-          transform: scaleX(1);
-        }
-        
-        &::after {
-          width: 50%;
-          transform: scaleX(1);
-        }
-      }
-    }
-  }
-  
-  /* Additional responsive adjustments */
-  @media (max-width: 576px) {
-    h2.text-next-project {
-      font-size: 1.4rem; /* Fixed smaller size for very small screens */
-    }
-    
-    h3 {
-      font-size: 1.1rem;
-    }
-    
-    .btn {
-      font-size: 0.9rem;
-      padding: 0.375rem 0.75rem;
-    }
-  }
+// up next stuff
+.up-next-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.up-next-thumb {
+	width: 120px;
+	height: 80px;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.up-next-header {
+	h3 {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #666;
+		letter-spacing: 1px;
+		margin-bottom: 0;
+	}
+}
+
+.up-next-content {
+	flex: 1;
+	
+	h4 {
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-bottom: 8px;
+	}
+	
+	p {
+		color: #666;
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+	
+	a {
+		font-size: 0.9rem;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 // Section line

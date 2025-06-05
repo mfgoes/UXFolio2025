@@ -99,23 +99,20 @@ function populateCardView(rows) {
     
     // Loop through CSV rows and create cards
     rows.forEach(row => {
-        if (row.trim() !== '') {
-            const cols = row.split(',');
-            
-            // Extract data from columns
-            const name = cols[0].trim();
-            const description = cols[1].trim();
-            const category = cols[2].trim();
-            const price = cols[3].trim();
-            const image = cols[4].trim();
-            const specs = cols[5] ? cols[5].trim() : '';
-            const projectLink = cols[6] ? cols[6].trim() : '';
-            const refLink = cols[7] ? cols[7].trim() : '';
-            
-            // Create card element
-            const card = document.createElement('div');
-            card.className = 'col-md-4 mb-4';
-            card.innerHTML = `
+     	if (row.trim() !== '') {
+			const cols = row.split(',');
+			
+			// Extract data from columns (new simplified structure)
+			const name = cols[0].trim();
+			const description = cols[1].trim();
+			const category = cols[2].trim();
+			const image = cols[3].trim();
+			const projectLink = cols[4] ? cols[4].trim() : '';
+			
+			// Create card element keeping original structure
+			const card = document.createElement('div');
+			card.className = 'col-md-4 mb-4';
+			card.innerHTML = `
                 <div class="card h-100">
                     <img src="${image}" class="card-img-top" alt="${name}">
                     <div class="card-body">
@@ -123,7 +120,6 @@ function populateCardView(rows) {
                         <p class="card-text">${description.substring(0, 100)}${description.length > 100 ? '...' : ''}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-secondary">${category}</span>
-                            <span class="price-tag">${price}</span>
                         </div>
                     </div>
                     <div class="card-footer">

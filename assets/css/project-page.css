@@ -74,99 +74,47 @@ section {
   font-size: 0.8em;
 }
 
-.up-next-card {
+.up-next-item {
   display: flex;
-  justify-content: center;
-  text-decoration: none;
-  color: inherit;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  /* Additional responsive adjustments */
+  align-items: flex-start;
+  gap: 16px;
 }
-.up-next-card .card {
-  max-width: 70%;
-  margin: 0 auto;
-  overflow: hidden;
-  transition: opacity 0.3s ease;
-  border-radius: 16px;
-  position: relative;
-}
-.up-next-card .card:hover {
-  opacity: 0.85;
-}
-.up-next-card .card .card-img {
+
+.up-next-thumb {
+  width: 120px;
+  height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 100%;
-  width: 100%;
-  border-radius: inherit;
+  flex-shrink: 0;
 }
-.up-next-card .card .card-img-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: inherit;
-  padding: 2rem 1rem; /* Added padding to ensure content stays within bounds */
+
+.up-next-header h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 1px;
+  margin-bottom: 0;
 }
-@media (max-width: 767px) {
-  .up-next-card .card {
-    max-width: 90%;
-  }
+
+.up-next-content {
+  flex: 1;
 }
-.up-next-card h2.text-next-project {
-  position: relative;
-  display: inline-block;
-  color: white;
-  transition: transform 0.3s ease;
-  font-size: calc(1.2rem + 0.6vw); /* Responsive font size that scales with viewport */
-  max-width: 100%; /* Ensure text doesn't overflow container */
-  word-wrap: break-word; /* Allow long words to break */
+.up-next-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
-.up-next-card h2.text-next-project.underline-effect::before, .up-next-card h2.text-next-project.underline-effect::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  width: 0;
-  height: 3px;
-  background-color: white;
-  transition: width 0.6s ease 0.1s;
+.up-next-content p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
-.up-next-card h2.text-next-project.underline-effect::before {
-  left: 50%;
-  transform-origin: right;
+.up-next-content a {
+  font-size: 0.9rem;
+  text-decoration: none;
 }
-.up-next-card h2.text-next-project.underline-effect::after {
-  right: 50%;
-  transform-origin: left;
-}
-.up-next-card h3 {
-  font-size: calc(1rem + 0.3vw); /* Smaller responsive font size for subtitle */
-  max-width: 100%;
-}
-.up-next-card:hover h2.text-next-project {
-  transform: translateY(-3px);
-}
-.up-next-card:hover h2.text-next-project.underline-effect::before {
-  width: 50%;
-  transform: scaleX(1);
-}
-.up-next-card:hover h2.text-next-project.underline-effect::after {
-  width: 50%;
-  transform: scaleX(1);
-}
-@media (max-width: 576px) {
-  .up-next-card h2.text-next-project {
-    font-size: 1.4rem; /* Fixed smaller size for very small screens */
-  }
-  .up-next-card h3 {
-    font-size: 1.1rem;
-  }
-  .up-next-card .btn {
-    font-size: 0.9rem;
-    padding: 0.375rem 0.75rem;
-  }
+.up-next-content a:hover {
+  text-decoration: underline;
 }
 
 .section-line {
