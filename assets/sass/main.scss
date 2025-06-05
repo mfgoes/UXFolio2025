@@ -41,7 +41,7 @@ $text-muted: #DADADA;
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
     font-family: "Montagu Slab", serif;
     color: inherit;
     font-optical-sizing: auto;
@@ -51,7 +51,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h3 {
     line-height: 110%;
-    font-size: 24px;
+    font-size: 22px;
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
 h4 {
