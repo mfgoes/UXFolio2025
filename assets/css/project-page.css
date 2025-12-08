@@ -164,7 +164,7 @@ section {
 }
 
 .yellow {
-  background-color: #fff9c4;
+  background-color: #F5F5F5;
   border-bottom: 3px solid #ffd54f;
 }
 
@@ -174,13 +174,23 @@ section {
 }
 
 .blue {
-  background-color: #e3f2fd;
+  background-color: #F5F5F5;
   border-bottom: 3px solid #64b5f6;
 }
 
 .pink {
   background-color: #fce4ec;
   border-bottom: 3px solid #f48fb1;
+}
+
+.red {
+  background-color: #F5F5F5;
+  border-bottom: 3px solid #ff6b6b;
+}
+
+.white {
+  background-color: #F5F5F5;
+  border-bottom: 3px solid #e0e0e0;
 }
 
 .intro-section {

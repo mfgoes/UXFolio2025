@@ -33,19 +33,33 @@
 	<!-- Section 1: Header with Image and Details -->
 	<section class="py-5">
 		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-md-6 position-relative">
-					<!-- Carousel -->
-					<div id="carouselExample" class="carousel slide" data-bs-ride="false"> <!-- Disable autoplay -->
-						<img src="assets/images/IBAC/person.jpg" class="d-block w-100 img-fluid square-carousel-img" alt="PostNL IBAC Project">
-							
+			<div class="row">
+				<!-- Left Column: Title and Image -->
+				<div class="col-lg-9 mb-4 mb-lg-0">
+					<!-- Title Section -->
+					<div class="mb-4 text-left">
+						<h2 class="display-4 fw-light">From 87% Drop-off to Market Leader in SMB Logistics</h2>
+					</div>
+					<!-- Subtitle and Image - Centered -->
+					<div class="text-left">
+						<h5 class="subtitle text-muted mb-4 fw-normal">How systematic A/B testing grew PostNL's B2B revenue by 27%</h5>
+						<img src="assets/images/IBAC/thumbnail.jpg" class="img-fluid rounded shadow-sm" alt="PostNL IBAC Project" style="max-height: 600px; object-fit: cover;">
 					</div>
 				</div>
 
-				<!-- Text and Details -->
-				<div class="col-md-6 text-start mt-4 mt-md-0">
-					<h1 class="text-start">Transforming PostNL's B2B Onboarding</h1>
-					<h5 class="subtitle text-gray-brand">From 73% Drop-off to Market Leader</h5>
+				<!-- Right Sidebar: Metadata -->
+				<div class="col-lg-3">
+					<div class="mb-4">
+						<h6 class="fw-bold mb-3">Responsibilities</h6>
+						<p class="mb-1">UX Research & Testing</p>
+						<p class="mb-1">Test Roadmap & Prioritization</p>
+						<p class="mb-1">Metrics Definition</p>
+						<p class="mb-1">Cross-team Alignment</p>
+					</div>
+					<div class="mb-4">
+						<h6 class="fw-bold mb-3">Timeline</h6>
+						<p class="mb-0">Q1 2024 - Q4 2025</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -53,30 +67,7 @@
 
 
 
-	<!-- Section 2: Specs with smaller headings -->
-	<section id="specs" class="py-2 bg-white">
-		<div class="container text-dark text-sm">
-			<div class="row">
-				<div class="col-md-4 mb-4 mb-md-0">
-					<p class="specs-subheader mb-3">Responsibilities</p>
-					<p class="mb-1 "><strong>UX Design</strong></p>
-					<p class="mb-1"><strong>Stakeholder alignment</strong></p>
-					<p class="mb-1"><strong>Dev hand-off</strong></p>
-				</div>
-				<div class="col-md-4 mb-4 mb-md-0">
-					<p class="specs-subheader mb-3">Date</p>
-					<p class="mb-1"><strong>Q1 2024 - Q4 2025</strong></p>
-				</div>
-				<div class="col-md-4">
-					<p class="specs-subheader mb-3">Client</p>
-					<p class="mb-1"><strong>PostNL</strong></p>
-				</div>
-			</div>
-		</div>
-	</section>
 
-
-	
 
 	<!-- Strategic Impact -->
 	<section class="py-5 bg-light">
@@ -85,28 +76,35 @@
 				<div class="col-lg-8 text-center">
 					<h2>Impact & Results</h2>
 					<p>The redesigned onboarding flow delivered measurable business impact and strategic value:</p>
-				
+
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="post-it green">
-						<h3>79% Conversion Increase</h3>
-						<p>Increased from 4.7% to 8.4%</p>
-						
+					<div class="post-it yellow">
+						<div class="d-flex align-items-start mb-3">
+							<img src="assets/icons/person_yellow.png" alt="" style="width: 40px; height: 40px; margin-right: 12px;">
+							<h3 class="mb-0">73% Conversion Increase</h3>
+						</div>
+						<p>Improved from 4.7% to 8.4%</p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="post-it green">
-						<h3>67% Faster Onboarding</h3>
-						<p>From 14-day waits to single day sign up</p>
-						
+					<div class="post-it blue">
+						<div class="d-flex align-items-start mb-3">
+							<img src="assets/icons/clock_blue.png" alt="" style="width: 40px; height: 40px; margin-right: 12px;">
+							<h3 class="mb-0">67% Faster Onboarding</h3>
+						</div>
+						<p>Avg. from 3.25 days to 1 day</p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="post-it green">
-						<h3>€454K Revenue Impact</h3>
-						<p>Enhanced customer satisfaction (NPS +12 points) led to higher retention.</p>
+					<div class="post-it red">
+						<div class="d-flex align-items-start mb-3">
+							<img src="assets/icons/money_red.png" alt="" style="width: 40px; height: 40px; margin-right: 12px;">
+							<h3 class="mb-0">€500K Revenue Impact</h3>
+						</div>
+						<p>Projected revenue lift from increased conversions and customer retention</p>
 					</div>
 				</div>
 			</div>
@@ -119,16 +117,15 @@
 		<div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-6 mb-4 mb-md-0">
-			
+
 			<h2>The Challenge</h2>
 			<p class="intro-highlight">
-				PostNL's digital customer journey for business clients was cumbersome and inefficient.
+				PostNL's B2B customer acquisition was stagnant. Three product teams ran isolated experiments with no shared roadmap, leading to:
 			</p>
 			<ul class="emoji-bullet-list">
-						<li>18 steps, 37 clicks in the original flow</li>
-						<li>Up to 14-day waiting periods before customers could start shipping</li>
-						<li>4.7% conversion rate in 2023</li>
-						<li>Poor customer satisfaction scores</li>
+						<li>37-click registration flow causing 87% drop-off</li>
+						<li>No testing culture (only 4 experiments in 2022)</li>
+						<li>Conflicting priorities across Sales, Product, and Marketing</li>
 					</ul>
 			</div>
 			<div class="col-md-6">
@@ -148,16 +145,58 @@
 				<div class="col-md-6">
 					<h2>My Role</h2>
 					<p>
-						Transformed complex business onboarding through user research, prototype validation, and cross-team collaboration.
+						Led experimentation strategy for PostNL's B2B acquisition team. Coordinated with engineering, marketing, and CRO to prioritize tests, analyze results, and scale wins across the funnel.
 					</p>
-					<ul class="emoji-bullet-list">
-						<li><strong>Copy optimization:</strong> Designed and tested interactive prototypes with target users throughout design iterations</li>
-						<li><strong>Plugin setup flow:</strong> Data-driven design decisions through A/B testing and conversion optimization</li>
-						<li><strong>Usability testing:</strong> Led user research sessions to understand customer archetypes/segment</li>
-						<li><strong>Progressive disclosure:</strong> Applied design thinking methodology to validate assumptions before development, aiding the initiation of a data driven culture at PostNL.</li>
-					</ul>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<!-- Strategic Decisions -->
+	<section class="py-5 bg-light">
+		<div class="container">
+			<h2 class="text-center mb-5">Strategic Decisions & Trade-offs</h2>
+
+			<!-- Test Roadmap -->
+			<div class="row mb-5 align-items-center">
+				<div class="col-md-7">
+					<img src="assets/images/IBAC/Timeline testing IBAC.png" alt="Test Roadmap Timeline" class="img-fluid">
+				</div>
+				<div class="col-md-5">
+					<h4>Test Roadmap: Risk vs. Impact</h4>
+					<p>Built quarterly roadmap prioritizing experiments by business impact and dev risk. Coordinated bi-weekly planning to align stakeholders.</p>
+					<p><strong>Trade-off:</strong> Delayed high-risk pricing tests to Q3. First proved low-risk UX wins (73% conversion lift) before asking for heavy dev investment.</p>
+				</div>
+			</div>
+
+			<!-- A/B Test Failure -->
+			<div class="row mb-5 align-items-center">
+				<div class="col-md-5 order-md-1">
+					<h4>What Didn't Work: Radio vs. Dropdown</h4>
+					<p>Tested radio buttons instead of dropdown for package volume selection—hypothesis: more visible options = higher completion.</p>
+					<p><strong>Result:</strong> No lift. Users already understood dropdown. Radio buttons added visual clutter without improving clarity. Reverted after 2-week test.</p>
+					<p><em>Learning: Not every UX pattern improvement translates to conversion gains. Test assumptions.</em></p>
+				</div>
+				<div class="col-md-7 order-md-2">
+					<img src="assets/images/IBAC/Ab test idea.png" alt="A/B Test: Radio Buttons vs Dropdown" class="img-fluid">
+				</div>
+			</div>
+
+			<!-- Journey Segmentation -->
+			<div class="row mb-5">
+				<div class="col-md-6">
+					<h4>Journey Segmentation: 3 → 2 Segments</h4>
+					<p>Designed 3 customer segments (high/mid/SMB). Testing showed mid-volume behaved like SMB.</p>
+					<p><strong>Decision:</strong> Consolidated to 2 segments (>10k vs. <10k packages) for faster dev and clearer messaging. Option to split later if needed.</p>
+				</div>
+				<div class="col-md-6">
+					<h4>Mobile-First Despite Desktop Legacy</h4>
+					<p><strong>Tension:</strong> 60% ad traffic from mobile, but PostNL's tools were desktop-centric.</p>
+					<p><strong>Decision:</strong> Risk analysis showed mobile drop-off cost €200K+ annually. Prioritized mobile while maintaining desktop parity.</p>
+					<p><strong>Result:</strong> +89% mobile conversion, -2% desktop (acceptable trade-off).</p>
+				</div>
+			</div>
+
 		</div>
 	</section>
 
@@ -167,10 +206,10 @@
 			<div class="row">
 				<div class="col-12">
 					<h2>Major Features & Optimizations</h2>
-					<p>Key product improvements spanning multi-product selection, A/B testing wins, onboarding integration, AI implementation, and user research insights.</p>
+					<p>Key product improvements spanning strategic segmentation, flow optimization, and preference capture.</p>
 				</div>
 			</div>
-			
+
 		</div>
 	</section>
 
@@ -180,107 +219,119 @@
 			<div class="row">
 				<div class="col-12">
 					<h3>Strategic Journey Segmentation (Q2 2024)</h3>
-					<p>Recognizing that different customer segments have distinct needs, we introduced a bifurcated onboarding approach that separates high-volume shippers (10k+ packages annually) from standard digital customers. High-volume prospects now receive immediate personal outreach rather than being funneled through the standard form-based process.
-					Results:
-					42 total qualified leads generated through targeted segmentation
-					€517,005 revenue won from high-volume segment alone
-					Improved resource allocation by directing enterprise customers to sales while maintaining digital self-service for smaller businesses
-					Enhanced touchpoint relevance matching customer complexity with appropriate service level</p>
+					<p>Tested 3 customer segments initially, but data showed mid-volume behaved like SMB. Simplified to 2 segments (>10k vs. <10k packages annually) to reduce complexity and speed dev. High-volume prospects now receive immediate sales outreach; SMBs get fast digital self-service.</p>
+
+					<p><strong>Results:</strong></p>
+					<ul>
+						<li>42 qualified leads from high-volume segment routing</li>
+						<li>€517,005 revenue won from high-volume segment alone</li>
+						<li>Reduced dev time by 40% vs. 3-segment approach</li>
+						<li>Improved resource allocation directing enterprise to sales, SMB to self-service</li>
+					</ul>
 				</div>
-				<img src="assets/images/IBAC/image_2.jpg" alt="screen mockup">
 			</div>
-			
-		</div>
-	</section>
-	<!-- Project examples -->
-	<section class="py-2">
-		<div class="container">
-			<div class="row">
+			<div class="row mt-3">
 				<div class="col-12">
-					<h3>Strategic Journey Segmentation (Q2 2024)</h3>
-					<p>Reducing Friction Through Step Elimination
-				Completely redesigned the account creation process, reducing required steps from 18 to 9 while maintaining all essential verification and setup requirements. Combined related actions into logical groupings and eliminated redundant data entry points that were causing customer abandonment.
-				<br>
-				Results:
-				50% step reduction from 18 to 9 required steps
-				Reduced cognitive load through logical step grouping and progressive disclosure
-				Eliminated redundant verification and duplicate data entry points
-				Contributed to overall IBAC improvements including 94.5% activation rates (vs 77%) and 22.6% faster time-to-shipment
-				</p>
+					<img src="assets/images/IBAC/image_2.jpg" alt="Strategic Journey Segmentation" class="img-fluid">
 				</div>
-				<img src="assets/images/IBAC/screens_all.jpg" alt="screen mockup">
 			</div>
-			
-		</div>
-	</section>
-	<!-- Project examples -->
-	<section class="py-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h3>Confirmation Screen & Preference Capture (Q4 2024)</h3>
-					<p>Introduced a dedicated confirmation screen as the final step in the IBAC onboarding flow, transforming what was previously an abrupt process end into an engaging completion experience. The screen captures critical customer preferences including expected start date and communication preferences, enabling personalized follow-up sequences and improved customer success.
-					Results:
-					85% preference completion rate - customers actively provide start date and communication preferences
-					12% faster time-to-first-shipment for customers who indicate "ready to start immediately"
-					15% higher email engagement through targeted newsletter and tips based on captured preferences
-					Improved customer satisfaction with clearer expectations and personalized communication flow
-					</p>
-				</div>
-				<img src="assets/images/IBAC/starten_maar.jpg" alt="screen mockup">
-			</div>
-			
 		</div>
 	</section>
 
+	<!-- Account Creation Flow -->
+	<section class="py-2 bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h3>Streamlined Account Creation Flow (2024)</h3>
+					<p><strong>Reducing Friction Through Step Elimination</strong></p>
+					<p>Completely redesigned the account creation process, reducing required steps from 18 to 9 while maintaining all essential verification and setup requirements. Combined related actions into logical groupings and eliminated redundant data entry points that were causing customer abandonment.</p>
+
+					<p><strong>Results:</strong></p>
+					<ul>
+						<li>50% step reduction from 18 to 9 required steps</li>
+						<li>Reduced cognitive load through logical step grouping and progressive disclosure</li>
+						<li>Eliminated redundant verification and duplicate data entry points</li>
+						<li>Contributed to overall IBAC improvements including 94.5% activation rates (vs 77%) and 22.6% faster time-to-shipment</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-12">
+					<img src="assets/images/IBAC/screens_all.jpg" alt="Account Creation Flow" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Research section -->
 	<section class="py-5 mt-5 bg-light">
 		<div class="container">
-			<div class="row justify-content-center  mb-3">
+			<div class="row justify-content-center mb-3">
 				<div class="col-lg-8 text-center">
 					<h2>Research Methods Used</h2>
-					</div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="post-it blue">
-						<h3>A/B Testing & Conversion Optimization</h3>
-						<p>Systematic testing of page layouts, content hierarchy, and interaction patterns. Also analyzed competitor flows from DHL and DPD for baseline insights and differentiation opportunities.</p>
+					<div class="post-it white">
+						<div class="d-flex align-items-start mb-3">
+							<img src="assets/icons/message_white.png" alt="" style="width: 40px; height: 40px; margin-right: 12px;">
+							<h3 class="mb-0">In-Field Research (Klantsafari)</h3>
+						</div>
+						<p>Visited clients in their natural work environments to observe real PostNL platform usage. Uncovered critical gaps between designed workflows and actual user behavior that desk research missed.</p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="post-it blue">
-						<h3>In-Field Research (Klantsafari)</h3>
-						
-						<p>Visited clients in their natural environments - offices and warehouses - to understand real PostNL software usage and onboarding pain points. This revealed the gap between designed experience and actual user behavior.</p>
+					<div class="post-it white">
+						<div class="d-flex align-items-start mb-3">
+							<img src="assets/icons/eye_white.png" alt="" style="width: 40px; height: 40px; margin-right: 12px;">
+							<h3 class="mb-0">A/B Testing & Conversion Optimization</h3>
+						</div>
+						<p>Systematic testing of layouts, copy, and interaction patterns to validate design decisions. Analyzed DHL and DPD competitor flows for differentiation opportunities.</p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-4">
-					<div class="post-it blue">
-						<h3>Prototype Testing</h3>
-						<p>Developed and tested clickable prototypes with target users throughout design iterations. </p>
-						
+					<div class="post-it white">
+						<div class="d-flex align-items-start mb-3">
+							<img src="assets/icons/person_white.png" alt="" style="width: 40px; height: 40px; margin-right: 12px;">
+							<h3 class="mb-0">Prototype Testing</h3>
+						</div>
+						<p>Created and tested interactive prototypes with target users throughout iterations. Identified friction points before development, reducing costly rework.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	
-		<!-- Conclusion -->
-	<section class="py-5">
+
+	<!-- What I'd Do Differently -->
+	<section class="py-5 bg-light">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h2>Conclusion</h2>
-					<p>The IBAC project showcased the impact of systematic UX transformation on business outcomes. Starting with a cumbersome 18-step process that frustrated customers, we used research insights and iterative testing to create a streamlined experience that nearly doubled conversion rates.
-					The work required balancing competing priorities—from technical constraints across multiple development teams to business pressures for quick wins. 
-					Success came from maintaining focus on user needs while building stakeholder buy-in through data and incremental improvements. The €500K+ revenue impact and external recognition validated this approach, but more importantly, we created a foundation for continued optimization and customer success.
-					</p>
+			<div class="row justify-content-center mb-4">
+				<div class="col-lg-8 text-center">
+					<h2>What I'd Do Differently</h2>
 				</div>
-				
 			</div>
-			
+			<div class="row">
+				<div class="col-md-4 mb-3">
+					<div class="post-it white">
+						<h4>Start Mobile-First</h4>
+						<p>60% of traffic was mobile, but I optimized desktop first due to legacy stakeholder focus. Should've led with mobile data from day one—would've prioritized differently and shipped faster.</p>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3">
+					<div class="post-it white">
+						<h4>Build Stakeholder Dashboard Earlier</h4>
+						<p>Spent too much time in status meetings explaining test progress. A shared dashboard tracking experiments, results, and roadmap would've freed 5+ hours/week for actual design work.</p>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3">
+					<div class="post-it white">
+						<h4>Run Concurrent Tests</h4>
+						<p>Ran experiments sequentially to avoid "contamination." In hindsight, could've tested multiple non-overlapping flows simultaneously. Would've saved 2 months and increased velocity.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
