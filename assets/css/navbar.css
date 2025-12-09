@@ -1,14 +1,40 @@
 /* Navbar Component Styles */
 
+/* Override Bootstrap default blue with purple theme */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #6e56cf !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #6e56cf !important;
+}
+
+/* Override hamburger menu button hover */
+.navbar-toggler:hover {
+    background-color: transparent !important;
+    border-color: rgba(110, 86, 207, 0.5) !important;
+}
+
+.navbar-toggler:focus {
+    background-color: transparent !important;
+    border-color: #6e56cf !important;
+    box-shadow: 0 0 0 0.2rem rgba(110, 86, 207, 0.25) !important;
+}
+
 /* Project Dropdown Mega Menu */
 .project-dropdown {
     min-width: 400px;
+    max-width: 450px;
     padding: 0.5rem;
     background: rgba(19, 20, 23, 0.98); /* #131417 */
     border: 1px solid rgba(110, 86, 207, 0.2); /* Deep Purple accent border */
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
+    right: 0;
+    left: auto !important;
+    transform: none !important;
 }
 
 /* Project Preview Item */
@@ -26,12 +52,13 @@
 }
 
 .project-preview-item:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(110, 86, 207, 0.1) !important;
     transform: translateX(4px);
 }
 
-.project-preview-item:active {
-    background: rgba(255, 255, 255, 0.08);
+.project-preview-item:active,
+.project-preview-item.active {
+    background: rgba(110, 86, 207, 0.2) !important;
 }
 
 /* Project Preview Layout */
@@ -99,12 +126,28 @@
 @media (max-width: 768px) {
     .project-dropdown {
         min-width: 100%;
-        width: 100%;
+        width: calc(100vw - 2rem);
+        max-width: 100%;
         margin-top: 0.5rem;
+        margin-left: 0;
+        margin-right: 0;
+        left: 1rem !important;
+        right: 1rem !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    .navbar-collapse .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        border: 1px solid rgba(110, 86, 207, 0.2);
     }
 
     .project-preview {
         padding: 0.5rem;
+        gap: 0.75rem;
     }
 
     .project-thumbnail {
@@ -117,7 +160,32 @@
     }
 
     .project-description {
-        font-size: 0.75rem;
+        display: none;
+    }
+}
+
+/* Extra Small Mobile (373px and below) */
+@media (max-width: 373px) {
+    .project-dropdown {
+        width: calc(100vw - 1rem);
+        padding: 0.25rem;
+        left: 0.5rem !important;
+        right: 0.5rem !important;
+    }
+
+    .project-preview {
+        padding: 0.4rem;
+        gap: 0.5rem;
+    }
+
+    .project-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+
+    .project-title {
+        font-size: 0.85rem;
+        line-height: 1.2;
     }
 }
 
@@ -140,5 +208,32 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Hover functionality for desktop */
+@media (min-width: 769px) {
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .nav-item.dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    /* Ensure dropdown stays within viewport */
+    .project-dropdown {
+        position: absolute;
+        right: 0;
+        left: auto;
+        margin-right: 0;
+    }
+
+    /* For smaller desktop screens, adjust width */
+    @media (max-width: 992px) {
+        .project-dropdown {
+            min-width: 350px;
+            max-width: 400px;
+        }
     }
 }
