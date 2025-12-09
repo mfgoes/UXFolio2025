@@ -1,12 +1,46 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #22252b, #020202 200px, rgb(2, 2, 2) 100px);
+    background: #1B1A1E;
     background-attachment: fixed;
     color: white;
+    position: relative;
   }
 
-  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+      135deg,
+      rgba(111, 206, 250, 0.12) 0%,
+      rgba(120, 86, 214, 0.08) 25%,
+      rgba(134, 241, 101, 0.105) 50%,
+      rgba(88, 86, 214, 0.1) 75%,
+      rgba(255, 135, 61, 0.2) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   .content {
     position: relative;
     z-index: 2; /* Ensures the content stays above the overlay */

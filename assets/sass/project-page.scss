@@ -167,59 +167,129 @@ section {
     background-color: rgb(245, 245, 245);
   }
 }
-// Post-it notes styling
+// Card icon - reusable component
+.card-icon {
+	width: 48px;
+	height: 48px;
+	display: block;
+}
+
 // Post-it notes styling
 .post-it {
-	padding: 20px;
-	min-height: 200px;
+	padding: 24px;
+	min-height: 180px;
 	position: relative;
 	border-radius: 10px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.03);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+	border: 1px solid rgba(0, 0, 0, 0.08);
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	color: #333;
-	background-color: $gray-10;
+	background-color: #fafaf9;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	transform: rotate(0deg);
-	
-	/* &:hover {
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-		transform: translateY(-5px) rotate(1deg);
-	}*/
-	
+
+	.metric-number {
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: #1a1a1a;
+	}
+
 	h3 {
-		font-size: 1.2rem;
-		margin-bottom: 12px;
-		font-weight: 600;
+		font-size: 1rem;
+		font-weight: 400;
+		color: #4b5563;
+		line-height: 1.4;
 	}
-	
+
+	h4 {
+		font-size: 1rem;
+		font-weight: 400;
+		color: #4b5563;
+		line-height: 1.3;
+	}
+
 	p {
-		font-size: 0.9rem;
+		font-size: 0.875rem;
+		color: #6b7280;
+		line-height: 1.5;
 	}
-	
+
 	@media (max-width: 767px) {
 		min-height: 150px;
+
+		.metric-number {
+			font-size: 1.25rem;
+		}
 	}
 }
 
 // Post-it color variations
 .yellow {
-  background-color: #fff9c4;
-  border-bottom: 3px solid #ffd54f;
-}
-
-.green {
-  background-color: #e8f5e9;
-  border-bottom: 3px solid #81c784;
+  background-color: #fafaf9;
+  border-left: 4px solid #fbbf24;
 }
 
 .blue {
-  background-color: #e3f2fd;
-  border-bottom: 3px solid #64b5f6;
+  background-color: #fafaf9;
+  border-left: 4px solid #3b82f6;
+}
+
+.red {
+  background-color: #fafaf9;
+  border-left: 4px solid #ef4444;
+}
+
+.green {
+  background-color: #fafaf9;
+  border-left: 4px solid #81c784;
 }
 
 .pink {
-  background-color: #fce4ec;
-  border-bottom: 3px solid #f48fb1;
+  background-color: #fafaf9;
+  border-left: 4px solid #f48fb1;
+}
+
+.white {
+  background-color: #fafaf9;
+  border-left: 4px solid #9ca3af;
+}
+
+.post-it.white {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    flex-grow: 1;
+  }
+}
+
+.post-it.yellow,
+.post-it.blue,
+.post-it.red {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    flex-grow: 1;
+  }
+}
+
+// Animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post-it.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 // Introduction section styling

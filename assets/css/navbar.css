@@ -1,0 +1,144 @@
+/* Navbar Component Styles */
+
+/* Project Dropdown Mega Menu */
+.project-dropdown {
+    min-width: 400px;
+    padding: 0.5rem;
+    background: rgba(19, 20, 23, 0.98); /* #131417 */
+    border: 1px solid rgba(110, 86, 207, 0.2); /* Deep Purple accent border */
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Project Preview Item */
+.project-preview-item {
+    padding: 0;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: block;
+    text-decoration: none;
+}
+
+.project-preview-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-preview-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+.project-preview-item:active {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Project Preview Layout */
+.project-preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+}
+
+/* Project Thumbnail */
+.project-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Project Info */
+.project-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.project-description {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Hover Effects for Project Info */
+.project-preview-item:hover .project-title {
+    color: #6e56cf;
+}
+
+.project-preview-item:hover .project-description {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Dropdown Toggle Arrow */
+.dropdown-toggle::after {
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .project-dropdown {
+        min-width: 100%;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .project-preview {
+        padding: 0.5rem;
+    }
+
+    .project-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+
+    .project-title {
+        font-size: 0.9rem;
+    }
+
+    .project-description {
+        font-size: 0.75rem;
+    }
+}
+
+/* Accessibility: Focus States */
+.project-preview-item:focus {
+    outline: 2px solid #6e56cf;
+    outline-offset: 2px;
+}
+
+/* Smooth dropdown animation */
+.dropdown-menu {
+    animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
