@@ -20,8 +20,8 @@
 #cards-view .card {
   width: 100%;
   margin-bottom: 20px;
-  background-color: rgba(26, 29, 35, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0f0f11;
+  border: 1px solid #2e2e2e;
   border-radius: 16px;
 }
 #cards-view .card .card-img-top {
@@ -85,7 +85,7 @@
   transition: transform 0.5s ease;
 }
 #cards-view .card:hover {
-  background-color: rgba(26, 29, 35, 0.7);
+  background-color: #141416;
   transition: 0.3s;
 }
 

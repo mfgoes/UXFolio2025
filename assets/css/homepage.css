@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #1B1A1E;
+  background: #1e1e20;
   background-attachment: fixed;
   color: white;
   position: relative;
@@ -15,7 +15,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(111, 206, 250, 0.12) 0%, rgba(120, 86, 214, 0.08) 25%, rgba(134, 241, 101, 0.105) 50%, rgba(88, 86, 214, 0.1) 75%, rgba(255, 135, 61, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(111, 206, 250, 0.12) 0%, rgba(138, 103, 235, 0.134) 25%, rgba(34, 67, 57, 0.1) 50%, rgba(88, 86, 214, 0.2) 75%, rgba(45, 65, 94, 0.12) 100%);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
