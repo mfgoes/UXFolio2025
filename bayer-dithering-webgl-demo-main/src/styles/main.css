@@ -1,0 +1,58 @@
+html,body,#hero_bg,canvas{margin:0;padding:0;width:100%;height:100%;overflow:hidden;}
+body{
+  font-family:'Poppins',sans-serif;
+  position:relative;
+  background:#000;
+  user-select:none;
+}
+#hero_bg canvas{display:block;}
+
+.label{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:clamp(3rem,10vw,10rem);
+  letter-spacing:.1em;
+  color:#fff;
+  mix-blend-mode:difference;   /* nice inverted look on dark bg */
+  pointer-events:none;
+}
+
+.pager{
+  position:absolute;
+  left:1rem;
+  bottom:1rem;
+  display:flex;
+  gap:.75rem;
+  font-size:.9rem;
+}
+
+a:hover, a[aria-current="page"]{color:#fff; cursor: pointer;}
+
+.social{
+  position:absolute;
+  right:1rem;
+  bottom:1rem;
+  font-size:.9rem;
+}
+.social img {
+  width:1.2rem;
+  height:1.2rem;
+  vertical-align:middle;
+  margin-right:.5rem;
+}
+.social  a{
+  color:#fff;
+  font-weight: 100;
+}
+.social a:hover {
+  text-decoration: underline ;
+}
+
+a{
+  color:#fff8;
+  text-decoration:none;
+  transition:color .2s;
+}

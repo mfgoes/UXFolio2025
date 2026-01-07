@@ -1,6 +1,6 @@
-// Fade out gradient overlay when scrolling to case studies section
+// Fade out dithering canvas when scrolling to case studies section
 document.addEventListener('DOMContentLoaded', function() {
-    const overlay = document.querySelector('.overlay');
+    const overlay = document.getElementById('dithering-canvas');
     const workSection = document.getElementById('work-section');
 
     if (!overlay || !workSection) return;

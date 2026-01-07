@@ -1,8 +1,8 @@
 .label-outline {
-  border: 1px solid #2e2e2e;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 4px 10px;
-  color: #868686;
+  color: #6c757d;
 }
 
 #toggle-view-btn {
@@ -20,8 +20,8 @@
 #cards-view .card {
   width: 100%;
   margin-bottom: 20px;
-  background-color: #0f0f11;
-  border: 1px solid #2e2e2e;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 }
 #cards-view .card .card-img-top {
@@ -54,38 +54,38 @@
   gap: 10px;
 }
 #cards-view .card .card-body h1, #cards-view .card .card-body h2, #cards-view .card .card-body h4, #cards-view .card .card-body h5 {
-  color: white;
+  color: #212529;
 }
 #cards-view .card .card-body p {
-  color: #F3F3EF;
+  color: #6c757d;
 }
 #cards-view .card .card-link {
   text-decoration: none;
   color: inherit;
 }
 #cards-view .card .card-link:hover .card-arrow {
-  background-color: #F3F3EF;
+  background-color: #212529;
   margin-right: 0;
   transition: 0.3s;
 }
 #cards-view .card .card-link:hover .card-arrow svg {
   transform: translateX(0px);
-  fill: #1A1B1F;
+  fill: #ffffff;
 }
 #cards-view .card .card-arrow {
   display: inline-block;
-  background-color: rgba(233, 233, 233, 0.18);
+  background-color: rgba(0, 0, 0, 0.05);
   margin-top: 10px;
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s;
 }
 #cards-view .card .card-arrow svg {
-  fill: #fff;
+  fill: #212529;
   transition: transform 0.5s ease;
 }
 #cards-view .card:hover {
-  background-color: #141416;
+  background-color: #f8f9fa;
   transition: 0.3s;
 }
 

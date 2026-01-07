@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html data-bs-theme="dark">
+<html data-bs-theme="light">
 
 <head>
 	<title>Mischa</title>
@@ -39,11 +39,11 @@
 	<meta name="twitter:image" content="assets/images/mendix/public/assets/images/mendix/homepage.jpg">
 
 	<!--<script src="assets/components/modal_component.js"></script>-->
-	
+
 </head>
 <body>
-    <!-- gradient background -->
-	<div class="overlay"></div>
+    <!-- Bayer dithering background -->
+	<div id="dithering-canvas"></div>
 	<!-- Navbar -->
     <div id="navbar-container"></div>
 	
@@ -58,8 +58,8 @@
 			<!-- Added buttons for Call to Action -->
 			<div class="text-center mt-4">
 				<a href="#work-section" class="btn btn-primary me-2">See my work</a>
-				<a href="#contact-container" class="btn btn-outline-secondary text-white">
-					<i class="fas fa-envelope me-2 "></i>Get in touch
+				<a href="#contact-container" class="btn btn-outline-dark">
+					<i class="fas fa-envelope me-2"></i>Get in touch
 				</a>
 			</div>
 		</div>
@@ -72,23 +72,23 @@
 			<!-- Top row logos -->
 			<div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
 				<div style="height: 80px; display: flex; align-items: center; padding: 0 15px;">
-					<img src="assets/images/client logos/postnl.png" alt="PostNL Logo" class="img-fluid" style="max-height: 100%; width: auto; max-width: 100%;">
+					<img src="assets/images/client logos/postnl.png" alt="PostNL Logo" class="img-fluid company-logo" style="max-height: 100%; width: auto; max-width: 100%;">
 				</div>
 			</div>
 			<div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
 				<div style="height: 80px; display: flex; align-items: center; padding: 0 15px;">
-					<img src="assets/images/client logos/mendix.png" alt="Mendix Logo" class="img-fluid" style="max-height: 100%; width: auto; max-width: 100%;">
+					<img src="assets/images/client logos/mendix.png" alt="Mendix Logo" class="img-fluid company-logo" style="max-height: 100%; width: auto; max-width: 100%;">
 				</div>
 			</div>
 			<!-- Bottom row logos -->
 			<div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
 				<div style="height: 80px; display: flex; align-items: center; padding: 0 15px;">
-					<img src="assets/images/client logos/crowdmedia.png" alt="Crowdmedia Logo" class="img-fluid" style="max-height: 100%; width: auto; max-width: 100%;">
+					<img src="assets/images/client logos/crowdmedia.png" alt="Crowdmedia Logo" class="img-fluid company-logo" style="max-height: 100%; width: auto; max-width: 100%;">
 				</div>
 			</div>
 			<div class="col-6 col-md-3 d-flex justify-content-center align-items-center">
 				<div style="height: 80px; display: flex; align-items: center; padding: 0 15px;">
-					<img src="assets/images/client logos/mattmo.png" alt="Mattmo Logo" class="img-fluid" style="max-height: 100%; width: auto; max-width: 100%;">
+					<img src="assets/images/client logos/mattmo.png" alt="Mattmo Logo" class="img-fluid company-logo" style="max-height: 100%; width: auto; max-width: 100%;">
 				</div>
 			</div>
 		</div>
@@ -98,7 +98,7 @@
 	<div id="work-section" class="container col-xxl-8 section-spacing">
     <div class="container">
 
-		<h3 class="text-light mb-4 text-center">Case Studies</h3>
+		<h3 class="text-dark mb-4 text-center">Case Studies</h3>
 
         
         <!-- Hide the table by default -->
@@ -134,23 +134,23 @@
 				<img src="assets/images/about/LUV02016.jpg" alt="Mischa vd Goes" class="img-fluid rounded shadow">
 			</div>
 			<div class="col-lg-7">
-				<h2 class="text-white mb-4">Ready to scale your product impact?</h2>
-				<p class="text-light mb-4">
+				<h2 class="text-dark mb-4">Ready to scale your product impact?</h2>
+				<p class="text-dark mb-4">
 					I help scale-ups and growing companies optimize user acquisition, improve conversion flows, and build experimentation culture. Currently transitioning from UX to Product Management while available for strategic consulting.
 				</p>
-				
-			
-					
-					
+
+
+
+
 					<div class="d-flex flex-wrap gap-3">
 						<a href="mailto:mischavdgoes@gmail.com" class="btn btn-primary">
 							<i class="fas fa-envelope me-2"></i>Send email
 						</a>
-						<a href="https://www.linkedin.com/in/mischavandergoes/" target="_blank" class="btn btn-outline-light">
+						<a href="https://www.linkedin.com/in/mischavandergoes/" target="_blank" class="btn btn-outline-dark">
 							<i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
 						</a>
 					</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -159,13 +159,13 @@
 <!-- EXPERIENCE SECTION -->
 <section class="section-spacing">
 	<div class="container">
-		<h2 class="text-white text-center mb-5">Experience</h2>
+		<h2 class="text-dark text-center mb-5">Experience</h2>
 
 		<div class="accordion accordion-flush" id="experienceAccordion">
 			<!-- PostNL -->
 			<div class="accordion-item bg-transparent border-bottom border-secondary">
 				<h2 class="accordion-header">
-					<button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#postnl">
+					<button class="accordion-button collapsed bg-transparent text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#postnl">
 						<div class="w-100 d-flex justify-content-between align-items-center pe-3">
 							<div>
 								<h5 class="mb-1">PostNL</h5>
@@ -176,7 +176,7 @@
 					</button>
 				</h2>
 				<div id="postnl" class="accordion-collapse collapse" data-bs-parent="#experienceAccordion">
-					<div class="accordion-body text-light">
+					<div class="accordion-body text-dark">
 						<p class="mb-3">Redesigned high-traffic business acquisition flows, improving conversion and NPS through data-driven iterations.</p>
 						<ul>
 							<li>Drove UX experimentation culture by designing 50+ data-driven tests that scaled A/B testing volume by 150%, transforming PostNL's approach from evidence-based to evidence-driven design</li>
@@ -191,7 +191,7 @@
 			<!-- Mendix -->
 			<div class="accordion-item bg-transparent border-bottom border-secondary">
 				<h2 class="accordion-header">
-					<button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mendix">
+					<button class="accordion-button collapsed bg-transparent text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mendix">
 						<div class="w-100 d-flex justify-content-between align-items-center pe-3">
 							<div>
 								<h5 class="mb-1">Mendix</h5>
@@ -202,7 +202,7 @@
 					</button>
 				</h2>
 				<div id="mendix" class="accordion-collapse collapse" data-bs-parent="#experienceAccordion">
-					<div class="accordion-body text-light">
+					<div class="accordion-body text-dark">
 						<p class="mb-3">Designed enterprise/business focused applications for 10+ teams in Siemens and Mendix, focusing on employee productivity.</p>
 						<ul>
 							<li>AuditON design lead: Led user research that identified key compliance bottlenecks for security teams. Designed streamlined workflow with automated validation that reduced error rates by 30%, using HEART framework to measure improvements in task success and user satisfaction</li>
@@ -216,7 +216,7 @@
 			<!-- Crowd Media -->
 			<div class="accordion-item bg-transparent border-bottom border-secondary">
 				<h2 class="accordion-header">
-					<button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#crowdmedia">
+					<button class="accordion-button collapsed bg-transparent text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#crowdmedia">
 						<div class="w-100 d-flex justify-content-between align-items-center pe-3">
 							<div>
 								<h5 class="mb-1">Crowd Media</h5>
@@ -227,7 +227,7 @@
 					</button>
 				</h2>
 				<div id="crowdmedia" class="accordion-collapse collapse" data-bs-parent="#experienceAccordion">
-					<div class="accordion-body text-light">
+					<div class="accordion-body text-dark">
 						<ul>
 							<li>Produced 100+ video ads for international brands, leading creative experimentation with diverse audio/visual approaches</li>
 							<li>Designed high-converting landing pages for personalized customer segments, implementing A/B testing to maximize conversion rates</li>
@@ -238,13 +238,13 @@
 			</div>
 		</div>
 
-		<h3 class="text-white text-center mt-5 mb-4">Internships</h3>
+		<h3 class="text-dark text-center mt-5 mb-4">Internships</h3>
 
 		<div class="accordion accordion-flush" id="internshipsAccordion">
 			<!-- TravPro Mobile -->
 			<div class="accordion-item bg-transparent border-bottom border-secondary">
 				<h2 class="accordion-header">
-					<button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#travpro">
+					<button class="accordion-button collapsed bg-transparent text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#travpro">
 						<div class="w-100 d-flex justify-content-between align-items-center pe-3">
 							<div>
 								<h5 class="mb-1">TravPro Mobile</h5>
@@ -255,7 +255,7 @@
 					</button>
 				</h2>
 				<div id="travpro" class="accordion-collapse collapse" data-bs-parent="#internshipsAccordion">
-					<div class="accordion-body text-light">
+					<div class="accordion-body text-dark">
 						UX design, thesis internship (Afstudeerstage).
 					</div>
 				</div>
@@ -264,7 +264,7 @@
 			<!-- Mattmo -->
 			<div class="accordion-item bg-transparent border-bottom border-secondary">
 				<h2 class="accordion-header">
-					<button class="accordion-button collapsed bg-transparent text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mattmo">
+					<button class="accordion-button collapsed bg-transparent text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#mattmo">
 						<div class="w-100 d-flex justify-content-between align-items-center pe-3">
 							<div>
 								<h5 class="mb-1">Mattmo Creative Agency</h5>
@@ -275,7 +275,7 @@
 					</button>
 				</h2>
 				<div id="mattmo" class="accordion-collapse collapse" data-bs-parent="#internshipsAccordion">
-					<div class="accordion-body text-light">
+					<div class="accordion-body text-dark">
 						Product packaging and design, contributive internship (Meewerkstage).
 					</div>
 				</div>
@@ -309,6 +309,9 @@
 	<!--<script src="assets/components/testimonials.js"></script>-->
 	<script src="assets/components/footer.js"></script>
 	<script src="assets/components/sidepanel.js"></script>
+
+	<!-- Bayer dithering effect -->
+	<script type="module" src="js/bayer-dithering.js"></script>
 
 </body>
 </html>
