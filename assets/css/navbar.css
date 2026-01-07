@@ -1,5 +1,36 @@
 /* Navbar Component Styles */
 
+/* Dark mode navbar (for homepage with dark hero) */
+body.dark-nav .navbar {
+    background-color: transparent;
+}
+
+body.dark-nav .navbar-brand,
+body.dark-nav .nav-link {
+}
+
+body.dark-nav .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-nav .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Light mode navbar (for case study pages) */
+body.light-nav .navbar {
+    background-color: #ffffff;
+}
+
+body.light-nav .navbar-brand,
+body.light-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.light-nav .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
 /* Override Bootstrap default blue with purple theme */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {

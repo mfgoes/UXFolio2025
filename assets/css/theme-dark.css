@@ -1,0 +1,298 @@
+/* ===================================
+   DARK MODE STYLES
+   Bootstrap handles most dark mode via data-bs-theme="dark"
+   This file handles custom components and overrides
+   =================================== */
+
+/* === GLOBAL DARK MODE === */
+[data-bs-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-bs-theme="dark"] body {
+    background-color: #0d0d0f;
+    color: #e4e4e7;
+}
+
+/* === HOMEPAGE DITHERING CANVAS === */
+[data-bs-theme="dark"] #dithering-canvas {
+    background-color: #0d0d0f;
+}
+
+/* === NAVBAR IN DARK MODE === */
+/* Light nav pages should have dark navbar in dark mode */
+[data-bs-theme="dark"] body.light-nav .navbar {
+    background-color: rgba(13, 13, 15, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+[data-bs-theme="dark"] body.light-nav .navbar-brand,
+[data-bs-theme="dark"] body.light-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-bs-theme="dark"] body.light-nav .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-bs-theme="dark"] body.light-nav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Homepage navbar */
+[data-bs-theme="dark"] .navbar-dark .navbar-brand,
+[data-bs-theme="dark"] .navbar-dark .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* === CARDS === */
+[data-bs-theme="dark"] #cards-view .card {
+    background-color: #1a1a1f;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] #cards-view .card:hover {
+    background-color: #222227;
+}
+
+[data-bs-theme="dark"] #cards-view .card h1,
+[data-bs-theme="dark"] #cards-view .card h2,
+[data-bs-theme="dark"] #cards-view .card h4,
+[data-bs-theme="dark"] #cards-view .card h5 {
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] #cards-view .card p {
+    color: #a1a1aa;
+}
+
+[data-bs-theme="dark"] #cards-view .card .card-arrow {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] #cards-view .card .card-arrow svg {
+    fill: #e4e4e7;
+}
+
+[data-bs-theme="dark"] #cards-view .card-link:hover .card-arrow {
+    background-color: #5856D6;
+}
+
+[data-bs-theme="dark"] #cards-view .card-link:hover .card-arrow svg {
+    fill: #ffffff;
+}
+
+/* === COMPANY LOGOS === */
+/* Remove invert filter in dark mode (logos are already light) */
+[data-bs-theme="dark"] .company-logo {
+    filter: invert(0) brightness(1);
+}
+
+/* === HEADINGS & TEXT === */
+[data-bs-theme="dark"] h1,
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] h3,
+[data-bs-theme="dark"] h4,
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] h6 {
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .text-dark {
+    color: #e4e4e7 !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #a1a1aa !important;
+}
+
+[data-bs-theme="dark"] p {
+    color: #d4d4d8;
+}
+
+/* === PROJECT PAGE SPECIFICS === */
+[data-bs-theme="dark"] .bg-paper {
+    background-color: #18181b;
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .bg-paper h2,
+[data-bs-theme="dark"] .bg-paper h3 {
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .specs-subheader {
+    color: #a1a1aa;
+    border-bottom-color: #3f3f46;
+}
+
+[data-bs-theme="dark"] .post-it {
+    background-color: #1a1a1f;
+    color: #e4e4e7;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .post-it.white {
+    background-color: #1a1a1f;
+}
+
+[data-bs-theme="dark"] .post-it.green,
+[data-bs-theme="dark"] .post-it.blue,
+[data-bs-theme="dark"] .post-it.yellow {
+    background-color: #1a1a1f;
+}
+
+[data-bs-theme="dark"] .post-it h3,
+[data-bs-theme="dark"] .post-it h4 {
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .post-it p {
+    color: #a1a1aa;
+}
+
+[data-bs-theme="dark"] .post-it .metric-number {
+    color: #fafafa;
+}
+
+/* === ACCORDION === */
+[data-bs-theme="dark"] .accordion-item {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .accordion-button {
+    background-color: transparent;
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .accordion-button:not(.collapsed) {
+    background-color: rgba(88, 86, 214, 0.1);
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .accordion-body {
+    color: #d4d4d8;
+}
+
+/* === BUTTONS === */
+[data-bs-theme="dark"] .btn-outline-dark {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] .btn-outline-dark:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+}
+
+/* === FOOTER (stays dark) === */
+/* Footer already has dark background, ensure toggle button looks good */
+#theme-toggle {
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] #theme-toggle {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #e4e4e7;
+}
+
+[data-bs-theme="dark"] #theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #5856D6;
+}
+
+/* === IMAGES === */
+/* Add subtle border to images in dark mode for better contrast */
+[data-bs-theme="dark"] img.img-fluid:not(.project-thumbnail):not(.company-logo),
+[data-bs-theme="dark"] .carousel-item img {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+[data-bs-theme="dark"] .shadow,
+[data-bs-theme="dark"] .shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5) !important;
+}
+
+/* === BACKGROUND SECTIONS === */
+[data-bs-theme="dark"] .bg-light,
+[data-bs-theme="dark"] #services-container {
+    background-color: #18181b !important;
+}
+
+[data-bs-theme="dark"] .bg-white {
+    background-color: #0d0d0f !important;
+}
+
+[data-bs-theme="dark"] section.bg-light {
+    background-color: #18181b !important;
+}
+
+[data-bs-theme="dark"] .intro-section {
+    background-color: #0d0d0f;
+}
+
+/* === DROPDOWN MENU (Navbar Projects) === */
+[data-bs-theme="dark"] .project-dropdown {
+    background: rgba(19, 20, 23, 0.98);
+    border-color: rgba(110, 86, 207, 0.3);
+}
+
+[data-bs-theme="dark"] .project-preview-item:hover {
+    background-color: rgba(110, 86, 207, 0.1);
+}
+
+[data-bs-theme="dark"] .project-title {
+    color: #fafafa;
+}
+
+[data-bs-theme="dark"] .project-description {
+    color: #d4d4d8;
+}
+
+/* === LISTS === */
+[data-bs-theme="dark"] .emoji-bullet-list li,
+[data-bs-theme="dark"] .emoji-check-list li {
+    color: #d4d4d8;
+}
+
+[data-bs-theme="dark"] ul li {
+    color: #d4d4d8;
+}
+
+/* === SERVICES CARDS === */
+[data-bs-theme="dark"] #services-container .card {
+    background-color: #1a1a1f !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-bs-theme="dark"] #services-container .card h5 {
+    color: #e4e4e7 !important;
+}
+
+[data-bs-theme="dark"] #services-container .card p {
+    color: #a1a1aa !important;
+}
+
+/* === TABLES === */
+[data-bs-theme="dark"] table {
+    color: #d4d4d8;
+}
+
+[data-bs-theme="dark"] .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* === SMOOTH TRANSITIONS === */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Don't animate canvas or images */
+canvas,
+img,
+svg {
+    transition: none !important;
+}

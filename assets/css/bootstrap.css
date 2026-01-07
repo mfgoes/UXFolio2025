@@ -4378,11 +4378,11 @@ tbody.collapse.show {
 }
 
 .navbar-dark .navbar-brand {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #fff;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .navbar-dark .navbar-nav .nav-link {
