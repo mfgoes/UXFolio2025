@@ -1,24 +1,29 @@
 class ThemeManager {
     constructor() {
         this.THEME_KEY = 'uxfolio-theme';
+        // First-time users always get light mode
         this.currentTheme = localStorage.getItem(this.THEME_KEY) || 'light';
         this.init();
     }
 
     init() {
         this.applyTheme(this.currentTheme, false);
-        this.waitForFooter();
-    }
 
-    waitForFooter() {
-        const checkFooter = setInterval(() => {
-            const toggleBtn = document.getElementById('theme-toggle');
-            if (toggleBtn) {
-                clearInterval(checkFooter);
+        // Wait for footer component to load (event-driven, no polling)
+        window.UXFolio.EventBus.waitForComponent('footer')
+            .then(() => {
                 this.attachToggleListener();
                 this.updateToggleUI();
-            }
-        }, 100);
+            })
+            .catch(error => {
+                console.error('Footer did not load:', error);
+                // Fallback: still try to attach if element exists
+                const toggleBtn = document.getElementById('theme-toggle');
+                if (toggleBtn) {
+                    this.attachToggleListener();
+                    this.updateToggleUI();
+                }
+            });
     }
 
     applyTheme(theme, animate = true) {
