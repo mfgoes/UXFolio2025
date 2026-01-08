@@ -75,3 +75,31 @@ body {
 .company-logo {
   filter: invert(1) brightness(0.9);
 }
+
+/* Services Section Styles */
+.section-spacing {
+  padding: 80px 0;
+}
+
+.services-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 48px 32px;
+  height: 100%;
+}
+
+.services-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.services-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.services-text {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
